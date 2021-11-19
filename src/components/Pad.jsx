@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import useStore from "../store";
 
@@ -12,17 +12,29 @@ const Pad = ({ triggerKey }) => {
   const setDisplay = useStore((state) => state.setDisplay);
   const power = useStore((state) => state.power);
 
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      // const char = String.fromCharCode(e)
+      if (e.key === triggerKey || e.key === triggerKey.toLowerCase()) {
+        console.log(e.key);
+        console.log(`keypress from ${triggerKey}`);
+      }
+    }
+
+    document.addEventListener("keypress", handleKeyPress);
+
+    return () => {
+      document.removeEventListener("keypress", handleKeyPress);
+    }
+  }, [triggerKey]);
+
   const handleClick = () => {
     console.log(`playing ${triggerKey}.mp3`);
     setDisplay(`${triggerKey}.mp3`);
   };
 
-  const handleKeyPress = (key) => {
-    console.log(key);
-  }
-
   return (
-    <PadButton onKeyPress={(key) => handleKeyPress(key)}>
+    <PadButton>
       <h3>{triggerKey}</h3>
       <button onClick={handleClick} disabled={!power}>
         Play {triggerKey}.mp3
