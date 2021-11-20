@@ -13,12 +13,18 @@ const Pad = ({ triggerKey }) => {
   const [fileName, setFileName] = useState("");
   const power = useStore((state) => state.power);
   const bank = useStore((state) => state.bank);
+  const volume = useStore((state) => state.volume);
 
   const handleClick = useCallback(() => {
     console.log(`playing ${fileName}`);
     setDisplay(bank.pads[triggerKey].file.slice(0, -4));
-    document.querySelector(`#${triggerKey}`).play();
-  }, [fileName, setDisplay, triggerKey, bank.pads]);
+    const pad = document.querySelector(`#${triggerKey}`);
+    pad.pause();
+    pad.currentTime = 0;
+    pad.volume = volume / 100;
+    pad.play();
+    // document.querySelector(`#${triggerKey}`).play();
+  }, [fileName, setDisplay, triggerKey, bank.pads, volume]);
 
   useEffect(() => {
     setFileName(`/sounds/${bank.url}/${bank.pads[triggerKey].file}`);
