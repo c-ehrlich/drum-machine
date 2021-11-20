@@ -60,36 +60,36 @@
           "file": "Rust 808.mp3"
         },
         "A": {
-          "name": "Aggressive 808",
-          "file": ""
+          "name": "Kick",
+          "file": "Rack Kick.mp3"
         },
         "S": {
-          "name": "Aggressive 808",
-          "file": ""
+          "name": "Woah",
+          "file": "Woah Vox.mp3"
         },
         "D": {
-          "name": "Aggressive 808",
-          "file": ""
+          "name": "Snare #1",
+          "file": "M1 Snare.mp3"
         },
         "F": {
-          "name": "Aggressive 808",
-          "file": ""
+          "name": "Snare #2",
+          "file": "Light Snare.mp3"
         },
         "Z": {
-          "name": "Aggressive 808",
-          "file": ""
+          "name": "Hi Hat #1",
+          "file": "Drill Hi Hat 1.mp3"
         },
         "X": {
-          "name": "Aggressive 808",
-          "file": ""
+          "name": "Hi Hat #2",
+          "file": "Drill Hi Hat 2.mp3"
         },
         "C": {
-          "name": "Aggressive 808",
-          "file": ""
+          "name": "Rim",
+          "file": "Hollow Rim.mp3"
         },
         "V": {
-          "name": "Aggressive 808",
-          "file": ""
+          "name": "Clap",
+          "file": "Cheap Clap.mp3"
         }
       }
     },
