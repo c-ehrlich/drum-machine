@@ -51,22 +51,70 @@
       "url": "uk-drill",
       "color": "#444444",
       "pads": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "Q": "",
-        "W": "",
-        "E": "",
-        "R": "",
-        "A": "",
-        "S": "",
-        "D": "",
-        "F": "",
-        "Z": "",
-        "X": "",
-        "C": "",
-        "V": ""
+        "1": {
+          "name": "808 #1",
+          "file": "Aggressive 808.mp3"
+        },
+        "2": {
+          "name": "808 #2",
+          "file": "Creed 808.mp3"
+        },
+        "3": {
+          "name": "808 #3",
+          "file": "Dirty 808.mp3"
+        },
+        "4": {
+          "name": "808 #4",
+          "file": "Rust 808.mp3"
+        },
+        "Q": {
+          "name": "Aggressive 808",
+          "file": ""
+        },
+        "W": {
+          "name": "Aggressive 808",
+          "file": ""
+        },
+        "E": {
+          "name": "Aggressive 808",
+          "file": ""
+        },
+        "R": {
+          "name": "Aggressive 808",
+          "file": ""
+        },
+        "A": {
+          "name": "Aggressive 808",
+          "file": ""
+        },
+        "S": {
+          "name": "Aggressive 808",
+          "file": ""
+        },
+        "D": {
+          "name": "Aggressive 808",
+          "file": ""
+        },
+        "F": {
+          "name": "Aggressive 808",
+          "file": ""
+        },
+        "Z": {
+          "name": "Aggressive 808",
+          "file": ""
+        },
+        "X": {
+          "name": "Aggressive 808",
+          "file": ""
+        },
+        "C": {
+          "name": "Aggressive 808",
+          "file": ""
+        },
+        "V": {
+          "name": "Aggressive 808",
+          "file": ""
+        }
       }
     },
     {
