@@ -15,10 +15,10 @@ const Pad = ({ triggerKey }) => {
   const bank = useStore((state) => state.bank);
 
   const handleClick = useCallback(() => {
-    console.log(`playing ${fileName}.mp3`);
-    setDisplay(`${fileName}.mp3`);
+    console.log(`playing ${fileName}`);
+    setDisplay(bank.pads[triggerKey].file.slice(0, -4));
     document.querySelector(`#${triggerKey}`).play();
-  }, [fileName, setDisplay, triggerKey]);
+  }, [fileName, setDisplay, triggerKey, bank.pads]);
 
   useEffect(() => {
     setFileName(`/sounds/${bank.url}/${bank.pads[triggerKey].file}`);
@@ -39,7 +39,7 @@ const Pad = ({ triggerKey }) => {
     <PadButton>
       <h3>{triggerKey}</h3>
       <button onClick={handleClick} disabled={!power}>
-        Play {fileName}.mp3
+        Play {fileName}
       </button>
       <audio className="clip" id={triggerKey}
         src={fileName} type="audio/mpeg">
