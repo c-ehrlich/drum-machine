@@ -2,7 +2,7 @@ import React, { useEffect, useCallback, useState } from "react";
 import styled from "styled-components";
 import useStore from "../store";
 
-const PadButton = styled.div`
+const PadButton = styled.button`
   border: 1px solid black;
   width: 200px;
   margin: auto;
@@ -23,7 +23,6 @@ const Pad = ({ triggerKey }) => {
     pad.currentTime = 0;
     pad.volume = volume / 100;
     pad.play();
-    // document.querySelector(`#${triggerKey}`).play();
   }, [fileName, setDisplay, triggerKey, bank.pads, volume]);
 
   useEffect(() => {
@@ -42,13 +41,15 @@ const Pad = ({ triggerKey }) => {
   }, [bank, handleClick, triggerKey]);
 
   return (
-    <PadButton>
-      <h3>{triggerKey}</h3>
-      <button onClick={handleClick} disabled={!power}>
-        Play {fileName}
-      </button>
-      <audio className="clip" id={triggerKey}
-        src={fileName} type="audio/mpeg">
+    <PadButton
+      className="drum-pad"
+      id={`drum-pad-${triggerKey}`}
+      onClick={handleClick}
+      disabled={!power}
+    >
+      {triggerKey}
+      {/* <div>{fileName}</div> */}
+      <audio className="clip" id={triggerKey} src={fileName} type="audio/mpeg">
         Your browser does not support HTML5 audio
       </audio>
     </PadButton>

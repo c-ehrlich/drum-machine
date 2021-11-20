@@ -4,7 +4,7 @@ import useStore from "../store";
 const Display = () => {
   const display = useStore(state => state.display);
 
-  return <div>Display: {display}</div>;
+  return <div id="display">Display: {display}</div>;
 };
 
 export default Display;
