@@ -1,9 +1,10 @@
 import create from "zustand";
+import { devtools } from "zustand/middleware"
 import getSoundBankFromTitle from "./helpers";
 
 const soundBankInit = getSoundBankFromTitle("uk-drill");
 
-const useStore = create(set => ({
+let useStore = set => ({
   power: true,
   togglePower: () => set(state => ({ power: !state.power })),
   volume: 50,
@@ -14,6 +15,8 @@ const useStore = create(set => ({
   setBank: (bank) => {
     set(state => ({ ...state, bank: getSoundBankFromTitle(bank) }));
   },
-}))
+})
 
+useStore = devtools(useStore);
+useStore = create(useStore);
 export default useStore;
