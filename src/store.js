@@ -2,7 +2,7 @@ import create from "zustand";
 import { devtools } from "zustand/middleware"
 import getSoundBankFromTitle from "./helpers";
 
-const soundBankInit = getSoundBankFromTitle("uk-drill");
+const soundBankInit = getSoundBankFromTitle("nujabes");
 
 let useStore = set => ({
   power: true,

@@ -5,18 +5,54 @@
       "url": "nujabes",
       "color": "#ff0000",
       "pads": {
-        "Q": "",
-        "W": "",
-        "E": "",
-        "R": "",
-        "A": "",
-        "S": "",
-        "D": "",
-        "F": "",
-        "Z": "",
-        "X": "",
-        "C": "",
-        "V": ""
+        "Q": {
+          "name": "Kick #1",
+          "file": "kick1.mp3"
+        },
+        "W": {
+          "name": "Kick #2",
+          "file": "kick7.mp3"
+        },
+        "E": {
+          "name": "Kick #3",
+          "file": "kick8.mp3"
+        },
+        "R": {
+          "name": "High Hat #1",
+          "file": "highhat3.mp3"
+        },
+        "A": {
+          "name": "Snare #1",
+          "file": "snare1.mp3"
+        },
+        "S": {
+          "name": "Snare #2",
+          "file": "snare6.mp3"
+        },
+        "D": {
+          "name": "Snare #3",
+          "file": "snare7.mp3"
+        },
+        "F": {
+          "name": "High Hat #2",
+          "file": "highhat4.mp3"
+        },
+        "Z": {
+          "name": "Open Hi Hat #1",
+          "file": "openhighhat1.mp3"
+        },
+        "X": {
+          "name": "Open Hi Hat #2",
+          "file": "openhighhat2.mp3"
+        },
+        "C": {
+          "name": "Percussion #1",
+          "file": "percussion1.mp3"
+        },
+        "V": {
+          "name": "Percussion #2",
+          "file": "percussion4.mp3"
+        }
       }
     },
     {
@@ -24,18 +60,54 @@
       "url": "808s",
       "color": "#00ff00",
       "pads": {
-        "Q": "",
-        "W": "",
-        "E": "",
-        "R": "",
-        "A": "",
-        "S": "",
-        "D": "",
-        "F": "",
-        "Z": "",
-        "X": "",
-        "C": "",
-        "V": ""
+        "Q": {
+          "name": "808 (Love Lockdown)",
+          "file": "808 (Love Lockdown).mp3"
+        },
+        "W": {
+          "name": "808 (Bad News)",
+          "file": "808 (Bad News).mp3"
+        },
+        "E": {
+          "name": "Kick (Amazing)",
+          "file": "Kick (Amazing).mp3"
+        },
+        "R": {
+          "name": "Choir (Say You Will)",
+          "file": "Choir (Say You Will).mp3"
+        },
+        "A": {
+          "name": "Snare (Paranoid)",
+          "file": "80s Snare (Paranoid).mp3"
+        },
+        "S": {
+          "name": "Moog (Paranoid)",
+          "file": "Fat Moog (Paranoid).mp3"
+        },
+        "D": {
+          "name": "Effect (Welcome to Heartbreak)",
+          "file": "Snare (Welcome to Heartbreak).mp3"
+        },
+        "F": {
+          "name": "Beep (Say You Will)",
+          "file": "Snare (Say You Will).mp3"
+        },
+        "Z": {
+          "name": "Snare (Paranoid)",
+          "file": "909 Snare (Paranoid).mp3"
+        },
+        "X": {
+          "name": "Perc (Paranoid)",
+          "file": "Perc (Paranoid).mp3"
+        },
+        "C": {
+          "name": "Taiko (Say You Will)",
+          "file": "Taiko Tom (Say You Will).mp3"
+        },
+        "V": {
+          "name": "Hat (Coldest Winter)",
+          "file": "Hat (Coldest Winter).mp3"
+        }
       }
     },
     {
@@ -91,25 +163,6 @@
           "name": "Clap",
           "file": "Cheap Clap.mp3"
         }
-      }
-    },
-    {
-      "name": "Amen Break",
-      "url": "amen-break",
-      "color": "#ffff00",
-      "pads": {
-        "Q": "",
-        "W": "",
-        "E": "",
-        "R": "",
-        "A": "",
-        "S": "",
-        "D": "",
-        "F": "",
-        "Z": "",
-        "X": "",
-        "C": "",
-        "V": ""
       }
     }
   ]
