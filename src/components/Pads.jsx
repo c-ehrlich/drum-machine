@@ -3,25 +3,27 @@ import styled from "styled-components";
 import Pad from "./Pad";
 
 // TODO get this by iterating through the bank instead
+// (after passing the FCC requirements, because those don't allow us to have more pads)
+// also try to get 1, 2, 3, 4 back in the grid
 const keys = [
   "Q",
   "W",
   "E",
-  "R",
+  // "R",
   "A",
   "S",
   "D",
-  "F",
+  // "F",
   "Z",
   "X",
   "C",
-  "V",
+  // "V",
 ];
 
 const PadsGrid = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr /*1fr*/;
   gap: 8px;
 `;
 
