@@ -7,13 +7,12 @@ const BankSelector = () => {
   const setBank = useStore((state) => state.setBank);
 
   const handleChange = (e) => {
-    console.log(e.target.value);
     setBank(e.target.value);
   };
 
   return (
     <div>
-      <label for="bank-select">Choose a Bank</label>
+      <label htmlFor="bank-select">Choose a Bank</label>
       <select
         onChange={(e) => handleChange(e)}
         selected={bank}
@@ -21,7 +20,7 @@ const BankSelector = () => {
         name="bank"
       >
         {Object.values(soundBanks.soundBanks).map(key => {
-          return <option value="key.url">{key.name}</option>
+          return <option key={key.url} value={key.url}>{key.name}</option>
         })}
       </select>
     </div>

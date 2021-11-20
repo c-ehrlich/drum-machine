@@ -12,14 +12,14 @@ const Volume = () => {
   return (
     <div>
       Volume: {volume}
-      <div class="slidecontainer">
+      <div className="slidecontainer">
         <input
           type="range"
           min="1"
           max="100"
-          initialValue={volume}
+          value={volume}
           onChange={handleVolumeChange}
-          class="slider"
+          className="slider"
           id="myRange"
         />
       </div>
