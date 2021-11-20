@@ -1,4 +1,5 @@
 import create from "zustand";
+import { devtools } from "zustand/middleware";
 import getSoundBankFromTitle from "./helpers";
 
 const soundBankInit = getSoundBankFromTitle("uk-drill");
@@ -12,10 +13,7 @@ const useStore = create(set => ({
   setDisplay: (display) => set(state => ({ ...state, display })),
   bank: soundBankInit,
   setBank: (bank) => {
-    const newBank = getSoundBankFromTitle(bank);
-    set(state => ({ ...state, newBank }));
-    console.log(bank);
-    console.log(newBank);
+    set(state => ({ ...state, bank: getSoundBankFromTitle(bank) }));
   },
 }))
 

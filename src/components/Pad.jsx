@@ -21,7 +21,6 @@ const Pad = ({ triggerKey }) => {
   }, [fileName, setDisplay, triggerKey]);
 
   useEffect(() => {
-    console.log("in Pad useEffect");
     setFileName(`/sounds/${bank.url}/${bank.pads[triggerKey].file}`);
     const handleKeyPress = (e) => {
       if (e.key === triggerKey || e.key === triggerKey.toLowerCase()) {

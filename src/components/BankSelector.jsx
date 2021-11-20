@@ -15,7 +15,7 @@ const BankSelector = () => {
       <label htmlFor="bank-select">Choose a Bank</label>
       <select
         onChange={(e) => handleChange(e)}
-        selected={bank}
+        defaultValue={bank.url}
         id="bank-select"
         name="bank"
       >
