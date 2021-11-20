@@ -1,5 +1,6 @@
 import React from "react";
 import useStore from "../store";
+import soundBanks from "../sounds.json";
 
 const BankSelector = () => {
   const bank = useStore((state) => state.bank);
@@ -19,9 +20,9 @@ const BankSelector = () => {
         id="bank-select"
         name="bank"
       >
-        <option value="nujabes">Nujabes</option>
-        <option value="ukdrill">UK Drill</option>
-        <option value="amenbreak">Amen Break</option>
+        {Object.values(soundBanks.soundBanks).map(key => {
+          return <option value="key.url">{key.name}</option>
+        })}
       </select>
     </div>
   );
