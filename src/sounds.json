@@ -5,10 +5,6 @@
       "url": "nujabes",
       "color": "#ff0000",
       "pads": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
         "Q": "",
         "W": "",
         "E": "",
@@ -28,10 +24,6 @@
       "url": "808s",
       "color": "#00ff00",
       "pads": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
         "Q": "",
         "W": "",
         "E": "",
@@ -51,37 +43,21 @@
       "url": "uk-drill",
       "color": "#444444",
       "pads": {
-        "1": {
+        "Q": {
           "name": "808 #1",
           "file": "Aggressive 808.mp3"
         },
-        "2": {
+        "W": {
           "name": "808 #2",
           "file": "Creed 808.mp3"
         },
-        "3": {
+        "E": {
           "name": "808 #3",
           "file": "Dirty 808.mp3"
         },
-        "4": {
+        "R": {
           "name": "808 #4",
           "file": "Rust 808.mp3"
-        },
-        "Q": {
-          "name": "Aggressive 808",
-          "file": ""
-        },
-        "W": {
-          "name": "Aggressive 808",
-          "file": ""
-        },
-        "E": {
-          "name": "Aggressive 808",
-          "file": ""
-        },
-        "R": {
-          "name": "Aggressive 808",
-          "file": ""
         },
         "A": {
           "name": "Aggressive 808",
@@ -122,10 +98,6 @@
       "url": "amen-break",
       "color": "#ffff00",
       "pads": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
         "Q": "",
         "W": "",
         "E": "",

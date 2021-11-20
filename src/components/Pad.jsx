@@ -1,7 +1,6 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect, useCallback, useState } from "react";
 import styled from "styled-components";
 import useStore from "../store";
-import soundBanks from "../sounds.json"
 
 const PadButton = styled.div`
   border: 1px solid black;
@@ -11,15 +10,19 @@ const PadButton = styled.div`
 
 const Pad = ({ triggerKey }) => {
   const setDisplay = useStore((state) => state.setDisplay);
+  const [fileName, setFileName] = useState("");
   const power = useStore((state) => state.power);
   const bank = useStore((state) => state.bank);
 
   const handleClick = useCallback(() => {
-    console.log(`playing ${triggerKey}.mp3`);
-    setDisplay(`${triggerKey}.mp3`);
-  }, [setDisplay, triggerKey]);
+    console.log(`playing ${fileName}.mp3`);
+    setDisplay(`${fileName}.mp3`);
+    document.querySelector(`#${triggerKey}`).play();
+  }, [fileName, setDisplay, triggerKey]);
 
   useEffect(() => {
+    console.log("in Pad useEffect");
+    setFileName(`/sounds/${bank.url}/${bank.pads[triggerKey].file}`);
     const handleKeyPress = (e) => {
       if (e.key === triggerKey || e.key === triggerKey.toLowerCase()) {
         handleClick();
@@ -31,16 +34,16 @@ const Pad = ({ triggerKey }) => {
     return () => {
       document.removeEventListener("keypress", handleKeyPress);
     };
-  }, [triggerKey, handleClick]);
+  }, [bank, handleClick, triggerKey]);
 
   return (
     <PadButton>
       <h3>{triggerKey}</h3>
       <button onClick={handleClick} disabled={!power}>
-        Play {triggerKey}.mp3
+        Play {fileName}.mp3
       </button>
-      <audio controls>
-        <source src={soundBanks.soundBanks[bank]} type="audio/mpeg" />
+      <audio className="clip" id={triggerKey}
+        src={fileName} type="audio/mpeg">
         Your browser does not support HTML5 audio
       </audio>
     </PadButton>

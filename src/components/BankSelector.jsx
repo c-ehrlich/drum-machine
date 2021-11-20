@@ -7,7 +7,6 @@ const BankSelector = () => {
   const setBank = useStore((state) => state.setBank);
 
   const handleChange = (e) => {
-    // bank = 
     setBank(e.target.value);
   };
 

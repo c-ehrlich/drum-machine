@@ -2,11 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Pad from "./Pad";
 
+// TODO get this by iterating through the bank instead
 const keys = [
-  "1",
-  "2",
-  "3",
-  "4",
   "Q",
   "W",
   "E",
