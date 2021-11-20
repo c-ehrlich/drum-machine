@@ -15,7 +15,7 @@ const Pad = ({ triggerKey }) => {
   const bank = useStore((state) => state.bank);
   const volume = useStore((state) => state.volume);
 
-  const handleClick = useCallback(() => {
+  const playSound = useCallback(() => {
     console.log(`playing ${fileName}`);
     setDisplay(bank.pads[triggerKey].file.slice(0, -4));
     const pad = document.querySelector(`#${triggerKey}`);
@@ -26,10 +26,10 @@ const Pad = ({ triggerKey }) => {
   }, [fileName, setDisplay, triggerKey, bank.pads, volume]);
 
   useEffect(() => {
-    setFileName(`/sounds/${bank.url}/${bank.pads[triggerKey].file}`);
+    setFileName(`sounds/${bank.url}/${bank.pads[triggerKey].file}`);
     const handleKeyPress = (e) => {
       if (e.key === triggerKey || e.key === triggerKey.toLowerCase()) {
-        handleClick();
+        playSound();
       }
     };
 
@@ -38,17 +38,16 @@ const Pad = ({ triggerKey }) => {
     return () => {
       document.removeEventListener("keypress", handleKeyPress);
     };
-  }, [bank, handleClick, triggerKey]);
+  }, [bank, playSound, triggerKey]);
 
   return (
     <PadButton
       className="drum-pad"
       id={`drum-pad-${triggerKey}`}
-      onClick={handleClick}
+      onClick={playSound}
       disabled={!power}
     >
       {triggerKey}
-      {/* <div>{fileName}</div> */}
       <audio className="clip" id={triggerKey} src={fileName} type="audio/mpeg">
         Your browser does not support HTML5 audio
       </audio>

@@ -9,6 +9,7 @@ import Volume from "./components/Volume";
 function App() {
   return (
     <div className="App" id="drum-machine">
+      <h1>GH Pages Test</h1>
       <PowerButton />
       <Display />
       <Volume />
