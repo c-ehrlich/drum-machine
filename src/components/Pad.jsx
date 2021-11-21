@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useState } from "react";
+import React, { useEffect, useCallback, useState, useRef } from "react";
 import styled from "styled-components";
 import useStore from "../store";
 import PadLabel from "./PadLabel";
@@ -15,6 +15,8 @@ const Pad = ({ triggerKey }) => {
   const power = useStore((state) => state.power);
   const bank = useStore((state) => state.bank);
   const volume = useStore((state) => state.volume);
+  const padButtonRef = useRef();
+  const padAudioRef = useRef();
 
   const playSound = useCallback(() => {
     /*
@@ -26,7 +28,7 @@ const Pad = ({ triggerKey }) => {
     }
 
     setDisplay(bank.pads[triggerKey].name);
-    const pad = document.querySelector(`#${triggerKey}`);
+    const pad = padAudioRef.current;
     pad.pause();
     pad.currentTime = 0;
     pad.volume = volume / 100;
@@ -54,6 +56,7 @@ const Pad = ({ triggerKey }) => {
   return (
     <div>
       <PadButton
+        ref={padButtonRef}
         className="drum-pad"
         id={`drum-pad-${triggerKey}`}
         onClick={playSound}
@@ -61,6 +64,7 @@ const Pad = ({ triggerKey }) => {
       >
         {triggerKey}
         <audio
+          ref={padAudioRef}
           className="clip"
           id={triggerKey}
           src={fileName}
