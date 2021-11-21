@@ -5,9 +5,20 @@ const PowerButton = () => {
   const power = useStore(state => state.power);
   const togglePower = useStore(state => state.togglePower)
 
+  const toggleOnSound = new Audio('sounds/buttons/switch-on.mp3');
+  const toggleOffSound = new Audio('sounds/buttons/switch-off.mp3');
+
+  const handleClick = () => {
+    power
+      ? toggleOffSound.play()
+      : toggleOnSound.play();
+    
+    togglePower();
+  }
+
   return (
     <div>
-      <button onClick={togglePower}>Power: { power ? "on" : "off" }</button>
+      <button onClick={handleClick}>Power: { power ? "on" : "off" }</button>
     </div>
   )
 }
