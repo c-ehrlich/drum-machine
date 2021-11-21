@@ -1,6 +1,7 @@
 import React, { useEffect, useCallback, useState } from "react";
 import styled from "styled-components";
 import useStore from "../store";
+import PadLabel from "./PadLabel";
 
 const PadButton = styled.button`
   border: 1px solid black;
@@ -16,23 +17,26 @@ const Pad = ({ triggerKey }) => {
   const volume = useStore((state) => state.volume);
 
   const playSound = useCallback(() => {
-    /* 
-    * plays a sound and does all the related side effects
-    * */ 
+    /*
+     * plays a sound and does all the related side effects
+     * */
     if (!power) {
       console.log("power is off");
       return;
     }
 
-    setDisplay(bank.pads[triggerKey].file.slice(0, -4));
+    setDisplay(bank.pads[triggerKey].name);
     const pad = document.querySelector(`#${triggerKey}`);
     pad.pause();
     pad.currentTime = 0;
     pad.volume = volume / 100;
     pad.play();
-  }, [power, setDisplay, triggerKey, bank.pads, volume]);
+  }, [power, setDisplay, triggerKey, volume, bank.pads]);
 
   useEffect(() => {
+    if (triggerKey === "Q") {
+      console.log("q useeffect");
+    }
     setFileName(`sounds/${bank.url}/${bank.pads[triggerKey].file}`);
     // putting this in here because it needs to be a callback with a huge
     // dependency array otherwise
@@ -48,17 +52,28 @@ const Pad = ({ triggerKey }) => {
   }, [bank, playSound, triggerKey]);
 
   return (
-    <PadButton
-      className="drum-pad"
-      id={`drum-pad-${triggerKey}`}
-      onClick={playSound}
-      disabled={!power}
-    >
-      {triggerKey}
-      <audio className="clip" id={triggerKey} src={fileName} type="audio/mpeg">
-        Your browser does not support HTML5 audio
-      </audio>
-    </PadButton>
+    <div>
+      <PadButton
+        className="drum-pad"
+        id={`drum-pad-${triggerKey}`}
+        onClick={playSound}
+        disabled={!power}
+      >
+        {triggerKey}
+        <audio
+          className="clip"
+          id={triggerKey}
+          src={fileName}
+          type="audio/mpeg"
+        >
+          Your browser does not support HTML5 audio
+        </audio>
+      </PadButton>
+      <PadLabel
+        triggerKey={triggerKey}
+        labelText={bank.pads[triggerKey].name}
+      />
+    </div>
   );
 };
 
