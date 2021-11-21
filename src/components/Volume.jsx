@@ -4,6 +4,7 @@ import useStore from "../store";
 const Volume = () => {
   const volume = useStore((state) => state.volume);
   const setVolume = useStore((state) => state.setVolume);
+  const power = useStore((state) => state.power);
 
   const handleVolumeChange = (e) => {
     setVolume(e.target.value);
@@ -11,7 +12,6 @@ const Volume = () => {
 
   return (
     <div>
-      Volume: {volume}
       <div className="slidecontainer">
         <input
           type="range"
@@ -21,6 +21,7 @@ const Volume = () => {
           onChange={handleVolumeChange}
           className="slider"
           id="myRange"
+          disabled={!power}
         />
       </div>
     </div>
