@@ -9,21 +9,20 @@ const keys = [
   "Q",
   "W",
   "E",
-  // "R",
+  "R",
   "A",
   "S",
   "D",
-  // "F",
+  "F",
   "Z",
   "X",
   "C",
-  // "V",
+  "V",
 ];
 
 const PadsGrid = styled.div`
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr /*1fr*/;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 8px;
 `;
 

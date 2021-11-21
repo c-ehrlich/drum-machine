@@ -16,29 +16,32 @@ const Pad = ({ triggerKey }) => {
   const volume = useStore((state) => state.volume);
 
   const playSound = useCallback(() => {
-    if (power) {
-      console.log(`playing ${fileName}`);
-      setDisplay(bank.pads[triggerKey].file.slice(0, -4));
-      const pad = document.querySelector(`#${triggerKey}`);
-      pad.pause();
-      pad.currentTime = 0;
-      pad.volume = volume / 100;
-      pad.play();
-    } else {
+    /* 
+    * plays a sound and does all the related side effects
+    * */ 
+    if (!power) {
       console.log("power is off");
+      return;
     }
-  }, [power, fileName, setDisplay, triggerKey, bank.pads, volume]);
+
+    setDisplay(bank.pads[triggerKey].file.slice(0, -4));
+    const pad = document.querySelector(`#${triggerKey}`);
+    pad.pause();
+    pad.currentTime = 0;
+    pad.volume = volume / 100;
+    pad.play();
+  }, [power, setDisplay, triggerKey, bank.pads, volume]);
 
   useEffect(() => {
     setFileName(`sounds/${bank.url}/${bank.pads[triggerKey].file}`);
+    // putting this in here because it needs to be a callback with a huge
+    // dependency array otherwise
     const handleKeyPress = (e) => {
       if (e.key === triggerKey || e.key === triggerKey.toLowerCase()) {
         playSound();
       }
     };
-
     document.addEventListener("keypress", handleKeyPress);
-
     return () => {
       document.removeEventListener("keypress", handleKeyPress);
     };
