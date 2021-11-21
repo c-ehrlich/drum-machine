@@ -15,7 +15,7 @@ const PadLabel = ({ labelText, triggerKey }) => {
 
   return (
     <LabelText>
-      {triggerKey} - {labelText}
+      {labelText}
     </LabelText>
   );
 };
