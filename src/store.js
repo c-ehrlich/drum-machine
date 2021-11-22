@@ -25,6 +25,13 @@ let useStore = (set) => ({
       state.sequencer[button][step] = !state.sequencer[button][step];
     });
   },
+  // TODO having the current step instead of maybe something like an array of steps means that
+  // every sequencer pad gets rerendered everytime the step changes
+  // (confirm this with a console log in useEffect)
+  // so instead it's probably better to have an array or something, and have each pad only
+  // know about the state of its location in the array?
+  currentStep: null,
+  setCurrentStep: (currentStep) => set((state) => ({ ...state, currentStep})),
 });
 
 useStore = devtools(useStore);
