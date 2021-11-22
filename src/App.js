@@ -4,6 +4,7 @@ import Display from "./components/Display";
 import PowerButton from "./components/PowerButton";
 import Pads from "./components/Pads";
 import Volume from "./components/Volume";
+import Sequencer from "./components/Sequencer";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Volume />
       <BankSelector />
       <Pads />
+      <Sequencer />
     </div>
   );
 }

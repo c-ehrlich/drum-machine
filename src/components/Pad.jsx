@@ -36,9 +36,6 @@ const Pad = ({ triggerKey }) => {
   }, [power, setDisplay, triggerKey, volume, bank.pads]);
 
   useEffect(() => {
-    if (triggerKey === "Q") {
-      console.log("q useeffect");
-    }
     setFileName(`sounds/${bank.url}/${bank.pads[triggerKey].file}`);
     // putting this in here because it needs to be a callback with a huge
     // dependency array otherwise
