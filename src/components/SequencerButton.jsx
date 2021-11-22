@@ -2,17 +2,17 @@ import React from 'react'
 import useStore from '../store'
 
 const SequencerButton = ({ button, step }) => {
-  const sequencer = useStore(state => state.sequencer);
+  const isOn = useStore(state => state.sequencer[button][step])
   const toggleOn = useStore(state => state.toggleSequencer);
 
   const handleClick = () => {
     console.log(`button = ${button} | step = ${step}`);
-    toggleOn(button, step);
+    toggleOn({button: button, step: step});
   }
 
   return (
     <div>
-      {button} {step} {sequencer[button][step] ? "x" : "o" }
+      {step} {isOn ? "x" : "o" }
       <button onClick={handleClick}>Toggle</button>
     </div>
   )

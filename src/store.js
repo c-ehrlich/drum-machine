@@ -1,10 +1,10 @@
 import create from "zustand";
 import { devtools } from "zustand/middleware";
-import { produce } from "immer";
 import getSoundBankFromTitle from "./helpers";
 import sequencerInit from "./sequencer";
 
 const soundBankInit = getSoundBankFromTitle("nujabes");
+
 
 let useStore = (set) => ({
   power: true,
@@ -18,10 +18,13 @@ let useStore = (set) => ({
     set((state) => ({ ...state, bank: getSoundBankFromTitle(bank) }));
   },
   sequencer: sequencerInit,
-  toggleSequencer: ({button, step}) => produce(state => {
-    console.log(`button = ${button}, step=${step}`);
-    state.sequencer[button][step] = !state.sequencer[button][step];
-  }),
+  toggleSequencer: ({ button, step }) => {
+    set((state) => {
+      console.log(button);
+      console.log(step);
+      state.sequencer[button][step] = !state.sequencer[button][step];
+    });
+  },
 });
 
 useStore = devtools(useStore);
