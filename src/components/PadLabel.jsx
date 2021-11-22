@@ -6,7 +6,7 @@ const LabelText = styled.h4`
   margin: 0;
   font-family: "Amatic SC", cursive;
   font-size: 20px;
-  background: url(images/check.png) repeat-x 0 0px;
+  background: url(${process.env.PUBLIC_URL + '/images/check.png'}) repeat-x 0 0px;
   display: inline-block;
   padding: 5px 0px;
 `;

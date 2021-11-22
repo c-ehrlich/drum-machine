@@ -5,8 +5,8 @@ const PowerButton = () => {
   const power = useStore(state => state.power);
   const togglePower = useStore(state => state.togglePower)
 
-  const toggleOnSound = new Audio('sounds/buttons/switch-on.mp3');
-  const toggleOffSound = new Audio('sounds/buttons/switch-off.mp3');
+  const toggleOnSound = new Audio(process.env.PUBLIC_URL + '/sounds/buttons/switch-on.mp3');
+  const toggleOffSound = new Audio(process.env.PUBLIC_URL + '/sounds/buttons/switch-off.mp3');
 
   const handleClick = () => {
     power

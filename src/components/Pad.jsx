@@ -36,7 +36,10 @@ const Pad = ({ triggerKey }) => {
   }, [power, setDisplay, triggerKey, volume, bank.pads]);
 
   useEffect(() => {
-    setFileName(`sounds/${bank.url}/${bank.pads[triggerKey].file}`);
+    setFileName(
+      process.env.PUBLIC_URL +
+        `/sounds/${bank.url}/${bank.pads[triggerKey].file}`
+    );
     // putting this in here because it needs to be a callback with a huge
     // dependency array otherwise
     const handleKeyPress = (e) => {
