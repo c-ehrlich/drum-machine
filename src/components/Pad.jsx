@@ -66,7 +66,7 @@ const Pad = ({ triggerKey }) => {
         <audio
           ref={padAudioRef}
           className="clip"
-          id={triggerKey}
+          id={`pad-${triggerKey}`}
           src={fileName}
           type="audio/mpeg"
         >

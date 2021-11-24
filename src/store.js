@@ -3,12 +3,10 @@ import { devtools } from "zustand/middleware";
 import getSoundBankFromTitle from "./helpers";
 import sequencerInit from "./sequencer";
 
-
 /*
  * get necessary data for initializing the store
  */
 const soundBankInit = getSoundBankFromTitle("nujabes");
-
 
 let useStore = (set) => ({
   // name and file location of sounds in the sound bank
@@ -22,8 +20,8 @@ let useStore = (set) => ({
   // (confirm this with a console log in useEffect)
   // so instead it's probably better to have an array or something, and have each pad only
   // know about the state of its location in the array?
-  currentStep: null,
-  setCurrentStep: (currentStep) => set((state) => ({ ...state, currentStep})),
+  currentStep: 0,
+  setCurrentStep: (currentStep) => set((state) => ({ ...state, currentStep })),
 
   // what the display is currently showing
   display: "Drum Machine",
@@ -31,7 +29,7 @@ let useStore = (set) => ({
 
   // drum machine / sequencer power
   power: true,
-  togglePower: () => set((state) => ({ power: !state.power })),
+  togglePower: () => set((state) => ({ power: !state.power, sequencerIsPlaying: false })),
 
   // on/off status of all sound buttons on the sequencer
   sequencer: sequencerInit,
@@ -39,6 +37,22 @@ let useStore = (set) => ({
     set((state) => {
       state.sequencer[button][step] = !state.sequencer[button][step];
     });
+  },
+
+  // BPM of the sequencer
+  sequencerBPM: 110,
+  setSequencerBPM: (sequencerBPM) =>
+    set((state) => ({ ...state, sequencerBPM })),
+
+  // is the sequencer playing or not
+  // toggling the sequencer also resets its current position to 0
+  sequencerIsPlaying: false,
+  toggleSequencerIsPlaying: () => {
+    set((state) => ({
+      sequencerIsPlaying: !state.sequencerIsPlaying,
+      currentStep: 0,
+    }));
+    console.log("TEMP toggleSequencerIsPlaying");
   },
 
   // volume
