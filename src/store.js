@@ -1,5 +1,6 @@
 import create from "zustand";
 import { devtools } from "zustand/middleware";
+import produce from "immer";
 import getSoundBankFromTitle from "./helpers";
 import sequencerInit from "./sequencer";
 
@@ -29,13 +30,19 @@ let useStore = (set) => ({
 
   // drum machine / sequencer power
   power: true,
-  togglePower: () => set((state) => ({ power: !state.power, sequencerIsPlaying: false })),
+  togglePower: () =>
+    set((state) => ({ power: !state.power, sequencerIsPlaying: false })),
 
   // on/off status of all sound buttons on the sequencer
   sequencer: sequencerInit,
   toggleSequencer: ({ button, step }) => {
     set((state) => {
       state.sequencer[button][step] = !state.sequencer[button][step];
+    });
+  },
+  turnOffSequencer: ({ button, step }) => {
+    set((state) => {
+      state.sequencer[button][step] = false;
     });
   },
 

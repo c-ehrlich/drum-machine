@@ -9,20 +9,18 @@ const SequencerButton = ({ button, step }) => {
 
   useEffect(() => {
     if (isOn && currentStep === step) {
-      console.log(`Button ${button}-${step} is playing`)
-      // todo: make playsound its own external function, remove it from the pad?
       playSound(button);
     }
   }, [isOn, button, step, currentStep])
 
   const handleClick = () => {
-    // console.log(`button = ${button} | step = ${step}`);
     toggleOn({button: button, step: step});
   }
 
   return (
     <div>
-      <button onClick={handleClick} style={{backgroundColor: currentStep === step ? "#ff0000" : "#ffffff"}}>{isOn ? "x" : "o"}</button>
+      <button onClick={handleClick} style={{backgroundColor: currentStep === step ? "#ff0000" : "#ffffff"}}>
+      <div style={{backgroundColor: isOn ? "#00ff00" : "#ffffff"}}>{isOn ? "x" : "o"}</div></button>
     </div>
   )
 }
