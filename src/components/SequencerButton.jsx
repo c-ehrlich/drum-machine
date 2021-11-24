@@ -22,7 +22,7 @@ const SequencerButton = ({ button, step }) => {
 
   return (
     <div>
-      <button onClick={handleClick}>{isOn ? "x" : "o"}</button>
+      <button onClick={handleClick} style={{backgroundColor: currentStep === step ? "#ff0000" : "#ffffff"}}>{isOn ? "x" : "o"}</button>
     </div>
   )
 }
