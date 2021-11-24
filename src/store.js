@@ -1,6 +1,5 @@
 import create from "zustand";
 import { devtools } from "zustand/middleware";
-import produce from "immer";
 import getSoundBankFromTitle from "./helpers";
 import sequencerInit from "./sequencer";
 
