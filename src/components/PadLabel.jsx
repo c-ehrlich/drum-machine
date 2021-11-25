@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import rotations from "../rotations.json";
 
+const LabelTextContainer = styled.div`
+  margin: 4px 0px;
+`;
 const LabelText = styled.h4`
-  width: 100%;
+  width: 100px;
   margin: 0;
   font-family: "Amatic SC", cursive;
   font-size: 20px;
@@ -16,7 +19,7 @@ const PadLabel = ({ labelText, triggerKey }) => {
     transform: `rotate(${rotations[triggerKey]}deg)`
   }
 
-  return <LabelText style={styles}>{labelText}</LabelText>;
+  return <LabelTextContainer><LabelText style={styles}>{labelText}</LabelText></LabelTextContainer>;
 };
 
 export default PadLabel;

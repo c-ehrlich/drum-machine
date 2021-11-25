@@ -3,10 +3,26 @@ import styled from "styled-components";
 import useStore from "../store";
 import PadLabel from "./PadLabel";
 
+const PadContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 const PadButton = styled.button`
   border: 1px solid black;
-  width: 200px;
+  width: 120px;
+  height: 80px;
+  border-radius: 8px;
   margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const PadButtonText = styled.p`
+  font-size: 28px;
+  font-family: 'Fredoka One', cursive;
 `;
 
 const Pad = ({ triggerKey }) => {
@@ -54,7 +70,7 @@ const Pad = ({ triggerKey }) => {
   }, [bank, playSound, triggerKey]);
 
   return (
-    <div>
+    <PadContainer>
       <PadButton
         ref={padButtonRef}
         className="drum-pad"
@@ -62,7 +78,7 @@ const Pad = ({ triggerKey }) => {
         onClick={playSound}
         disabled={!power}
       >
-        {triggerKey}
+        <PadButtonText>{triggerKey}</PadButtonText>
         <audio
           ref={padAudioRef}
           className="clip"
@@ -77,7 +93,7 @@ const Pad = ({ triggerKey }) => {
         triggerKey={triggerKey}
         labelText={bank.pads[triggerKey].name}
       />
-    </div>
+    </PadContainer>
   );
 };
 

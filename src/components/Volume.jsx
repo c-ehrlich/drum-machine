@@ -5,9 +5,12 @@ const Volume = () => {
   const volume = useStore((state) => state.volume);
   const setVolume = useStore((state) => state.setVolume);
   const power = useStore((state) => state.power);
+  const setDisplay = useStore((state) => state.setDisplay);
 
   const handleVolumeChange = (e) => {
-    setVolume(e.target.value);
+    const volume = e.target.value;
+    setVolume(volume);
+    setDisplay(`Volume: ${volume}%`);
   }
 
   return (
