@@ -1,18 +1,12 @@
 import React from "react";
 import useStore from "../store";
 import styled from "styled-components";
+import LabelText from "../styled";
 
 const InfoElement = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-`;
-
-const LabelText = styled.div`
-  color: #d1d1d1;
-  margin: 0;
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 400;
 `;
 
 const Volume = () => {

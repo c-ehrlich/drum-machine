@@ -5,6 +5,7 @@ import styled from "styled-components";
 import useStore from "../store";
 import SequencerBPM from "./SequencerBPM";
 import SequencerIsPlaying from "./SequencerIsPlaying";
+import LabelText from "../styled";
 
 const SequencerOuter = styled.div`
   margin: auto;
@@ -27,13 +28,7 @@ const SequencerButtonBlock = styled.div`
   display: grid;
   grid-template-columns: repeat(16, 20px);
 `;
-const SequencerLabelText = styled.div`
-  color: #d1d1d1;
-  margin: 0;
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 400;
-  font-size: 10px;
-`;
+
 
 const Sequencer = () => {
   const bank = useStore((state) => state.bank);
@@ -91,7 +86,7 @@ const Sequencer = () => {
                 clear
               </button>
             </SequencerRow>
-            <SequencerLabelText key={`sequencer-${button}`}>{bank.pads[button].name}</SequencerLabelText>
+            <LabelText key={`sequencer-${button}`}>{bank.pads[button].name}</LabelText>
           </SequencerBlock>
         );
       })}
