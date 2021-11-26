@@ -22,6 +22,13 @@ const SequencerButtonBlock = styled.div`
   display: grid;
   grid-template-columns: repeat(16, 20px);
 `;
+const SequencerLabelText = styled.div`
+  color: #d1d1d1;
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+`;
 
 const Sequencer = () => {
   const bank = useStore((state) => state.bank);
@@ -60,7 +67,7 @@ const Sequencer = () => {
       {keys.map((button) => {
         return (
           <SequencerBlock>
-            <div key={`sequencer-${button}`}>{bank.pads[button].name}</div>
+            <SequencerLabelText key={`sequencer-${button}`}>{bank.pads[button].name}</SequencerLabelText>
             <SequencerRow>
               <SequencerButtonBlock>
                 {[...Array(16).keys()].map((step) => {

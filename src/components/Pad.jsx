@@ -6,7 +6,7 @@ import PadLabel from "./PadLabel";
 const PadContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 const PadButton = styled.button`
