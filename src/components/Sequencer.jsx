@@ -6,29 +6,48 @@ import useStore from "../store";
 import SequencerBPM from "./SequencerBPM";
 import SequencerIsPlaying from "./SequencerIsPlaying";
 import LabelText from "../styled";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const SequencerOuter = styled.div`
+  width: 100%;
   margin: auto;
 `;
+const SequencerControls = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+`;
 const SequencerRowsContainer = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 8px;
 `;
+const SequencerRow = styled.div`
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  flex-direction: row;
+  align-items: center;
+`;
 const SequencerBlock = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 `;
-const SequencerRow = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
 const SequencerButtonBlock = styled.div`
-  display: grid;
-  grid-template-columns: repeat(16, 20px);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 `;
-
+const DeleteRowIcon = styled(FontAwesomeIcon)`
+  color: red;
+  font-size: 24px;
+  cursor: pointer;
+`;
 
 const Sequencer = () => {
   const bank = useStore((state) => state.bank);
@@ -56,40 +75,42 @@ const Sequencer = () => {
 
   const clearSequencerRow = (button) => {
     Object.keys(sequencer[button]).forEach((step) => {
-      turnOffSequencer({button: button, step: step});
-  })};
+      turnOffSequencer({ button: button, step: step });
+    });
+  };
 
   return (
     <SequencerOuter>
-      <SequencerIsPlaying />
-      <SequencerBPM />
-      {currentStep}
+      <SequencerControls>
+        <SequencerIsPlaying />
+        <SequencerBPM />
+      </SequencerControls>
       <SequencerRowsContainer>
-      {keys.map((button) => {
-        return (
-          <SequencerBlock>
-            <SequencerRow>
-              <SequencerButtonBlock>
-                {[...Array(16).keys()].map((step) => {
-                  return (
-                    <SequencerButton
-                      key={`sequencer-${button}-${step + 1}`}
-                      button={button}
-                      // maybe find a function that can create a range between
-                      // two arbitrary numbers instead of doing this awful hack?
-                      step={step + 1}
-                    />
-                  );
-                })}
-              </SequencerButtonBlock>
-              <button onClick={() => clearSequencerRow(button)}>
-                clear
-              </button>
-            </SequencerRow>
-            <LabelText key={`sequencer-${button}`}>{bank.pads[button].name}</LabelText>
-          </SequencerBlock>
-        );
-      })}
+        {keys.map((button) => {
+          return (
+            <SequencerBlock>
+              <SequencerRow>
+                <SequencerButtonBlock>
+                  {[...Array(16).keys()].map((step) => {
+                    return (
+                      <SequencerButton
+                        key={`sequencer-${button}-${step + 1}`}
+                        button={button}
+                        // maybe find a function that can create a range between
+                        // two arbitrary numbers instead of doing this awful hack?
+                        step={step + 1}
+                      />
+                    );
+                  })}
+                </SequencerButtonBlock>
+                <DeleteRowIcon icon={faTrash} size="xl" onClick={() => clearSequencerRow(button)} />
+              </SequencerRow>
+              <LabelText key={`sequencer-${button}`}>
+                {bank.pads[button].name}
+              </LabelText>
+            </SequencerBlock>
+          );
+        })}
       </SequencerRowsContainer>
     </SequencerOuter>
   );

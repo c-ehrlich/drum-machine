@@ -16,6 +16,7 @@ const PowerButton = () => {
     border: 3px solid;
     border-color: ${power ? "lightgreen" : "#888888"};
     color: ${power ? "lightgreen" : "black"};
+    cursor: pointer;
   `;
 
   const toggleOnSound = new Audio(

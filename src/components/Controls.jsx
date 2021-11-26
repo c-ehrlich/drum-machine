@@ -11,14 +11,20 @@ const ControlsContainer = styled.div`
   grid-template-columns: 1fr 1fr;
 `;
 
+const ControlsColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
+
 const Controls = () => {
   return (
     <ControlsContainer>
       <Display />
-      <div>
+      <ControlsColumn>
         <Volume />
         <BankSelector />
-      </div>
+      </ControlsColumn>
     </ControlsContainer>
   );
 };

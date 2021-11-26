@@ -23,9 +23,6 @@ const Volume = () => {
 
   return (
     <InfoElement>
-      <LabelText>
-        Volume
-      </LabelText>
       <input
         type="range"
         min="1"
@@ -36,6 +33,9 @@ const Volume = () => {
         id="myRange"
         disabled={!power}
       />
+      <LabelText>
+        Volume
+      </LabelText>
     </InfoElement>
   );
 };

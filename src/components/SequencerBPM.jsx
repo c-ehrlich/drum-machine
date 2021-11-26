@@ -1,5 +1,13 @@
 import React from "react";
 import useStore from "../store";
+import LabelText from "../styled";
+import styled from "styled-components";
+
+const StyledSequencerBPM = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`;
 
 const SequencerBPM = () => {
   const power = useStore((state) => state.power);
@@ -13,8 +21,7 @@ const SequencerBPM = () => {
   }
 
   return (
-    <div>
-      <div>{sequencerBPM}</div>
+    <StyledSequencerBPM>
       <input
         type="range"
         min="50"
@@ -25,7 +32,8 @@ const SequencerBPM = () => {
         id="myRange"
         disabled={!power}
       />
-    </div>
+      <LabelText>Sequencer BPM</LabelText>
+    </StyledSequencerBPM>
   );
 };
 

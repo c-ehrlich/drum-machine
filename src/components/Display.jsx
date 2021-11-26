@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const DisplayContainer = styled.div`
   width: 100%;
-  height: 64px;
+  height: 100%;
   background-color: skyblue;
   display: flex;
   align-items: center;
