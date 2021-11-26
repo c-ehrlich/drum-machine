@@ -15,9 +15,15 @@ const SequencerOuter = styled.div`
 `;
 const SequencerControls = styled.div`
   width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+`;
+const SequencerControlsLeft = styled.div`
   display: flex;
   flex-direction: row;
   gap: 16px;
+  justify-content: space-between;
 `;
 const SequencerRowsContainer = styled.div`
   width: 100%;
@@ -44,9 +50,23 @@ const SequencerButtonBlock = styled.div`
   justify-content: space-between;
 `;
 const DeleteRowIcon = styled(FontAwesomeIcon)`
-  color: red;
+  color: rgb(118,118,118);
   font-size: 24px;
   cursor: pointer;
+
+  &:hover {
+    color: rgb(215, 215, 215);
+  }
+`;
+const TitleText = styled.h1`
+  color: #d1d1d1;
+  margin: 0;
+  font-size: 24px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+`;
+const ContrastText = styled.span`
+  color: #ff0000;
 `;
 
 const Sequencer = () => {
@@ -82,7 +102,12 @@ const Sequencer = () => {
   return (
     <SequencerOuter>
       <SequencerControls>
-        <SequencerIsPlaying />
+        <SequencerControlsLeft>
+          <TitleText>
+            <ContrastText>JS</ContrastText>equencer
+          </TitleText>
+          <SequencerIsPlaying />
+        </SequencerControlsLeft>
         <SequencerBPM />
       </SequencerControls>
       <SequencerRowsContainer>
@@ -103,7 +128,11 @@ const Sequencer = () => {
                     );
                   })}
                 </SequencerButtonBlock>
-                <DeleteRowIcon icon={faTrash} size="xl" onClick={() => clearSequencerRow(button)} />
+                <DeleteRowIcon
+                  icon={faTrash}
+                  size="xl"
+                  onClick={() => clearSequencerRow(button)}
+                />
               </SequencerRow>
               <LabelText key={`sequencer-${button}`}>
                 {bank.pads[button].name}

@@ -22,9 +22,18 @@ const StyledSequencerButton = styled.button`
   &.pass {
     background-color: salmon;
   }
+
+  &:hover {
+    background-color: rgb(215, 215, 215);
+  }
+
+  &.pass:hover {
+    background-color: rgb(255, 200, 200);
+  }
 `;
 
 const SequencerButton = ({ button, step }) => {
+  const power = useStore((state) => state.power);
   const isOn = useStore((state) => state.sequencer[button][step]);
   const toggleOn = useStore((state) => state.toggleSequencer);
   const currentStep = useStore((state) => state.currentStep);
@@ -40,6 +49,7 @@ const SequencerButton = ({ button, step }) => {
   };
 
   const assignButtonClass = () => {
+    if (!power) return "power-off";
     if (currentStep === step) {
       if (isOn) {
         return "play";
