@@ -23,9 +23,10 @@ const DrumMachineContainer = styled.div`
   border-right: 32px solid black;
   flex-direction: column;
   align-items: center;
+  gap: 32px;
 `;
 
-const FlexRow = styled.div`
+const HeaderRow = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -37,10 +38,10 @@ function App() {
   return (
     <AppDiv className="App">
       <DrumMachineContainer>
-        <FlexRow>
+        <HeaderRow>
           <Title />
           <PowerButton />
-        </FlexRow>
+        </HeaderRow>
         <Pads />
         <Controls />
         <Sequencer />
