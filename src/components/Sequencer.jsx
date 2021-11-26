@@ -9,6 +9,11 @@ import SequencerIsPlaying from "./SequencerIsPlaying";
 const SequencerOuter = styled.div`
   margin: auto;
 `;
+const SequencerRowsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+`;
 const SequencerBlock = styled.div`
   display: flex;
   flex-direction: column;
@@ -64,10 +69,10 @@ const Sequencer = () => {
       <SequencerIsPlaying />
       <SequencerBPM />
       {currentStep}
+      <SequencerRowsContainer>
       {keys.map((button) => {
         return (
           <SequencerBlock>
-            <SequencerLabelText key={`sequencer-${button}`}>{bank.pads[button].name}</SequencerLabelText>
             <SequencerRow>
               <SequencerButtonBlock>
                 {[...Array(16).keys()].map((step) => {
@@ -86,9 +91,11 @@ const Sequencer = () => {
                 clear
               </button>
             </SequencerRow>
+            <SequencerLabelText key={`sequencer-${button}`}>{bank.pads[button].name}</SequencerLabelText>
           </SequencerBlock>
         );
       })}
+      </SequencerRowsContainer>
     </SequencerOuter>
   );
 };
