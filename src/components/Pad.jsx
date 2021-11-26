@@ -10,6 +10,7 @@ const PadContainer = styled.div`
 `;
 
 const PadButton = styled.button`
+  color: transparent;
   border: 1px solid black;
   width: 120px;
   height: 80px;
@@ -18,11 +19,16 @@ const PadButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &:hover {
+    color: #bbbbbb;
+  }
 `;
 
 const PadButtonText = styled.p`
-  font-size: 28px;
+  font-size: 48px;
   font-family: 'Fredoka One', cursive;
+  -webkit-text-stroke: 1px #bbbbbb;
 `;
 
 const Pad = ({ triggerKey }) => {

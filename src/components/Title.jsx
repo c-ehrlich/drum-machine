@@ -5,6 +5,7 @@ const TitleText = styled.h1`
   color: #d1d1d1;
   margin: 0;
   font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
 `;
 
 const ContrastText = styled.span`

@@ -9,6 +9,7 @@ const DisplayContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Press Start 2P', cursive;
 `;
 
 const Display = () => {
