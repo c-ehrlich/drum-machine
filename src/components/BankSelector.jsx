@@ -75,7 +75,7 @@ const BankSelector = () => {
         <BankSelectorIcon icon={faCaretSquareLeft} size="2x" onClick={prevBank} />
         <BankSelectorSelect
           onChange={(e) => handleChange(e)}
-          defaultValue={bank.url}
+          value={bank.url}
           id="bank-select"
           name="bank"
           disabled={!power}
