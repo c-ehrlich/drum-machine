@@ -10,14 +10,19 @@ const DisplayContainer = styled.div`
   align-items: center;
   justify-content: center;
   font-family: 'Press Start 2P', cursive;
+
+  &.off {
+    background-color: darkblue;
+  }
 `;
 
 const Display = () => {
   const display = useStore((state) => state.display);
+  const power = useStore((state) => state.power);
 
   return (
-    <DisplayContainer>
-      <div id="display">{display}</div>
+    <DisplayContainer className={power ? null : "off"}>
+      <div id="display">{power ? display : null}</div>
     </DisplayContainer>
   );
 };
