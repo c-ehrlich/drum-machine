@@ -5,6 +5,7 @@ import Pads from "./components/Pads";
 import Controls from "./components/Controls";
 import Sequencer from "./components/Sequencer";
 import PowerButton from "./components/PowerButton";
+import GlobalFonts from "./fonts/fonts";
 
 const AppDiv = styled.div`
   min-height: 100vh;
@@ -37,6 +38,7 @@ const HeaderRow = styled.div`
 function App() {
   return (
     <AppDiv className="App">
+      <GlobalFonts />
       <DrumMachineContainer>
         <HeaderRow>
           <Title />

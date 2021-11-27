@@ -2,6 +2,7 @@ import React from "react";
 import useStore from "../store";
 import styled from "styled-components";
 
+
 const DisplayContainer = styled.div`
   background-color: white;
   border: 2px inset rgba(0, 0, 0, 0.4);
@@ -20,7 +21,9 @@ const StyledDisplay = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Press Start 2P", cursive;
+  ${'' /* font-family: "Press Start 2P", cursive; */}
+  font-family: "DSDigitalBold";
+  font-size: 32px;
   box-shadow: 0px 0px 6px 3px rgb(215, 215, 215);
 
   background: crimson;
