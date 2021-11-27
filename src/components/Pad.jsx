@@ -10,26 +10,38 @@ const PadContainer = styled.div`
 `;
 
 const PadButton = styled.button`
-  color: transparent;
-  border: 1px solid black;
+  ${"" /* layout */}
   width: 120px;
   height: 80px;
-  border-radius: 8px;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background-color: rgb(118, 118, 118);
+
+  ${"" /* border */}
+  border-radius: 8px;
+  border-style: outset;
+  border-color: rgba(255, 255, 255, 0.125);
+  border-width: 2px;
+
   cursor: pointer;
 
+  ${"" /* text */}
+  color: transparent;
+
   &:hover {
-    color: #bbbbbb;
+    ${'' /* color: #bbbbbb; */}
+    border-style: inset;
+    border-color: rgba(255, 255, 255, 0.5);
   }
 `;
 
 const PadButtonText = styled.p`
   font-size: 48px;
-  font-family: 'Fredoka One', cursive;
-  -webkit-text-stroke: 1px #bbbbbb;
+  font-family: "Fredoka One", cursive;
+  -webkit-text-stroke: 1px rgb(51, 51, 51);
 `;
 
 const Pad = ({ triggerKey }) => {
