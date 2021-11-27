@@ -5,19 +5,49 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
 
+const StyledPowerButton = styled.button`
+  height: 48px;
+  width: 48px;
+  background: conic-gradient(
+    #d7d7d7,
+    #c3c3c3,
+    #cccccc,
+    #c6c6c6,
+    #d7d7d7,
+    #c3c3c3,
+    #cccccc,
+    #c6c6c6,
+    #d7d7d7,
+    #c3c3c3,
+    #cccccc,
+    #c6c6c6,
+    #d7d7d7,
+    #c3c3c3,
+    #cccccc,
+    #c6c6c6,
+    #d7d7d7
+  );
+  border-radius: 100%;
+  border: 3px solid;
+  border-color: #888888;
+  color: black;
+  cursor: pointer;
+
+  &.on {
+    border-color: red;
+    color: red;
+
+    box-shadow: 0px 0px 5px 1px #FFA98F;
+  }
+`;
+
+const PowerIcon = styled(FontAwesomeIcon)`
+  font-size: 24px;
+`;
+
 const PowerButton = () => {
   const power = useStore((state) => state.power);
   const togglePower = useStore((state) => state.togglePower);
-
-  const PowerButtonOuter = styled.button`
-    height: 48px;
-    width: 48px;
-    border-radius: 100%;
-    border: 3px solid;
-    border-color: ${power ? "lightgreen" : "#888888"};
-    color: ${power ? "lightgreen" : "black"};
-    cursor: pointer;
-  `;
 
   const toggleOnSound = new Audio(
     process.env.PUBLIC_URL + "/sounds/buttons/switch-on.mp3"
@@ -33,11 +63,9 @@ const PowerButton = () => {
   };
 
   return (
-    <>
-      <PowerButtonOuter onClick={handleClick} classList={power ? "on" : null}>
-        <FontAwesomeIcon icon={faPowerOff} />
-      </PowerButtonOuter>
-    </>
+    <StyledPowerButton onClick={handleClick} className={power ? "on" : null}>
+      <PowerIcon icon={faPowerOff} />
+    </StyledPowerButton>
   );
 };
 
