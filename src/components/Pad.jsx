@@ -38,12 +38,6 @@ const PadButton = styled.button`
   }
 `;
 
-const PadButtonText = styled.p`
-  font-size: 48px;
-  font-family: "Fredoka One", cursive;
-  -webkit-text-stroke: 1px rgb(51, 51, 51);
-`;
-
 const Pad = ({ triggerKey }) => {
   const setDisplay = useStore((state) => state.setDisplay);
   const [fileName, setFileName] = useState("");
@@ -97,7 +91,6 @@ const Pad = ({ triggerKey }) => {
         onClick={playSound}
         disabled={!power}
       >
-        <PadButtonText>{triggerKey}</PadButtonText>
         <audio
           ref={padAudioRef}
           className="clip"
