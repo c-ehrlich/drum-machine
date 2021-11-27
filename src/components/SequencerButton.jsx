@@ -8,13 +8,10 @@ const StyledSequencerButton = styled.button`
   width: 24px;
   background-color: rgb(118, 118, 118);
 
-
   border-radius: 4px;
   border-style: outset;
   border-color: rgba(255, 255, 255, 0.125);
   border-width: 2px;
-
-
 
   cursor: pointer;
 
