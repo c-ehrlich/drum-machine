@@ -7,28 +7,40 @@ const StyledSequencerButton = styled.button`
   height: 32px;
   width: 24px;
   background-color: rgb(118, 118, 118);
-  border: 1px transparent;
+
+
   border-radius: 4px;
+  border-style: outset;
+  border-color: rgba(255, 255, 255, 0.125);
+  border-width: 2px;
+
+
+
   cursor: pointer;
 
   &.play {
     background-color: red;
+    box-shadow: 0px 0px 10px 5px red;
   }
 
   &.hit {
-    background-color: white;
+    background-color: rgb(215, 215, 215);
+    box-shadow: 0px 0px 6px 3px rgb(215, 215, 215);
   }
 
   &.pass {
     background-color: salmon;
+    box-shadow: 0px 0px 10px 5px salmon;
   }
 
   &:hover {
     background-color: rgb(215, 215, 215);
+    box-shadow: 0px 0px 10px 5px rgb(215, 215, 215);
   }
 
   &.pass:hover {
     background-color: rgb(255, 200, 200);
+    box-shadow: 0px 0px 10px 5px rgb(255, 200, 200);
   }
 `;
 
