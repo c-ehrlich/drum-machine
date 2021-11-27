@@ -37,7 +37,7 @@ const StyledPowerButton = styled.button`
     border-color: red;
     color: red;
 
-    box-shadow: 0px 0px 5px 1px #FFA98F;
+    box-shadow: 0px 0px 5px 1px #ffa98f;
   }
 `;
 
@@ -48,6 +48,7 @@ const PowerIcon = styled(FontAwesomeIcon)`
 const PowerButton = () => {
   const power = useStore((state) => state.power);
   const togglePower = useStore((state) => state.togglePower);
+  const setCurrentStep = useStore((state) => state.setCurrentStep);
 
   const toggleOnSound = new Audio(
     process.env.PUBLIC_URL + "/sounds/buttons/switch-on.mp3"
@@ -57,8 +58,12 @@ const PowerButton = () => {
   );
 
   const handleClick = () => {
-    power ? toggleOffSound.play() : toggleOnSound.play();
-
+    if (power === true) {
+      setCurrentStep(0);
+      toggleOffSound.play();
+    } else {
+      toggleOnSound.play();
+    }
     togglePower();
   };
 
