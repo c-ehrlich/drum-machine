@@ -1,8 +1,9 @@
 
 /*
- * remove blue outline after clicking button
+ * remove blue outline after clicking button / select
  */
 button:focus {outline:0;}
+select:focus {outline:0;}
 
 /*
  * RANGE SLIDERS

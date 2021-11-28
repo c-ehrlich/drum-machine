@@ -6,8 +6,8 @@ import styled from "styled-components";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCaretSquareLeft,
-  faCaretSquareRight,
+  faChevronLeft,
+  faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
 const StyledBankSelector = styled.div`
@@ -24,9 +24,28 @@ const BankSelectorRow = styled.div`
   gap: 8px;
 `;
 
-const BankSelectorIcon = styled(FontAwesomeIcon)`
-  color: red;
+const BankSelectorButton = styled.button`
+  height: 32px;
+  width: 28px;
+  background-color: rgb(118, 118, 118);
+
+  border-radius: 4px;
+  border-style: outset;
+  border-color: rgba(255, 255, 255, 0.125);
+  border-width: 2px;
+
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const BankSelectorIcon = styled(FontAwesomeIcon)`
+  font-size: 18px;
+  color: rgb(51, 51, 51);
+  filter: drop-shadow(0px 1px 3px rgb(118, 118, 118)) drop-shadow(0px -1px 0px black);
+  ${'' /* filter: ; */}
 `;
 
 const BankSelectorSelect = styled.select`
@@ -72,7 +91,9 @@ const BankSelector = () => {
   return (
     <StyledBankSelector>
       <BankSelectorRow>
-        <BankSelectorIcon icon={faCaretSquareLeft} size="2x" onClick={prevBank} />
+        <BankSelectorButton onClick={prevBank}>
+          <BankSelectorIcon icon={faChevronLeft} />
+        </BankSelectorButton>
         <BankSelectorSelect
           onChange={(e) => handleChange(e)}
           value={bank.url}
@@ -88,7 +109,9 @@ const BankSelector = () => {
             );
           })}
         </BankSelectorSelect>
-        <BankSelectorIcon icon={faCaretSquareRight} size="2x" onClick={nextBank} />
+        <BankSelectorButton onClick={nextBank}>
+          <BankSelectorIcon icon={faChevronRight} />
+        </BankSelectorButton>
       </BankSelectorRow>
       <LabelText>Sample Bank</LabelText>
     </StyledBankSelector>
