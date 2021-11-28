@@ -200,7 +200,7 @@ const sequencerInit = {
     16: false,
   },
   V: {
-    1: true,
+    1: false,
     2: false,
     3: false,
     4: false,
