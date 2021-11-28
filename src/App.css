@@ -1,3 +1,9 @@
+
+/*
+ * remove blue outline after clicking button
+ */
+button:focus {outline:0;}
+
 /*
  * RANGE SLIDERS
  */

@@ -114,7 +114,7 @@ const Sequencer = () => {
       <SequencerRowsContainer>
         {keys.map((button) => {
           return (
-            <SequencerBlock>
+            <SequencerBlock key={`sequencer-block-${button}`}>
               <SequencerRow>
                 <SequencerButtonBlock>
                   {[...Array(16).keys()].map((step) => {
@@ -131,7 +131,6 @@ const Sequencer = () => {
                 </SequencerButtonBlock>
                 <DeleteRowIcon
                   icon={faTrash}
-                  size="xl"
                   onClick={() => clearSequencerRow(button)}
                 />
               </SequencerRow>

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import useStore from "../store";
 import styled from "styled-components";
-import playSound from "../tools/playsound";
+import playSound from "../tools/playSound";
 
 const StyledSequencerButton = styled.button`
   height: 32px;
@@ -15,19 +15,24 @@ const StyledSequencerButton = styled.button`
 
   cursor: pointer;
 
+  transition: 0ms;
+
   &.play {
     background-color: red;
     box-shadow: 0px 0px 10px 5px red;
+    transition: 200ms;
   }
 
   &.hit {
     background-color: rgb(215, 215, 215);
     box-shadow: 0px 0px 6px 3px rgb(215, 215, 215);
+    transition: 0ms;
   }
 
   &.pass {
     background-color: salmon;
     box-shadow: 0px 0px 10px 5px salmon;
+    transition: 500ms;
   }
 
   &:hover {
@@ -46,12 +51,15 @@ const SequencerButton = ({ button, step }) => {
   const isOn = useStore((state) => state.sequencer[button][step]);
   const toggleOn = useStore((state) => state.toggleSequencer);
   const currentStep = useStore((state) => state.currentStep);
+  const volume = useStore((state) => state.volume);
+
+  // TODO get everything we need for 
 
   useEffect(() => {
     if (isOn && currentStep === step) {
-      playSound(button);
+      playSound({triggerKey: button, volume: volume });
     }
-  }, [isOn, button, step, currentStep]);
+  }, [isOn, button, step, currentStep, volume]);
 
   const handleClick = () => {
     toggleOn({ button: button, step: step });

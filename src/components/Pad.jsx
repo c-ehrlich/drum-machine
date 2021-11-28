@@ -1,7 +1,8 @@
-import React, { useEffect, useCallback, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 import useStore from "../store";
 import PadLabel from "./PadLabel";
+import playSound from "../tools/playSound";
 
 const PadContainer = styled.div`
   display: flex;
@@ -31,15 +32,22 @@ const PadButton = styled.button`
   ${"" /* text */}
   color: transparent;
 
+  transition: 200ms;
+
   &:hover {
     ${'' /* color: #bbbbbb; */}
     border-style: inset;
     border-color: rgba(255, 255, 255, 0.5);
   }
+
+  &.hit {
+    background-color: salmon;
+    box-shadow: 0px 0px 10px 5px salmon;
+    transition: 0ms;
+  }
 `;
 
 const Pad = ({ triggerKey }) => {
-  const setDisplay = useStore((state) => state.setDisplay);
   const [fileName, setFileName] = useState("");
   const power = useStore((state) => state.power);
   const bank = useStore((state) => state.bank);
@@ -47,22 +55,6 @@ const Pad = ({ triggerKey }) => {
   const padButtonRef = useRef();
   const padAudioRef = useRef();
 
-  const playSound = useCallback(() => {
-    /*
-     * plays a sound and does all the related side effects
-     * */
-    if (!power) {
-      console.log("power is off");
-      return;
-    }
-
-    setDisplay(bank.pads[triggerKey].name);
-    const pad = padAudioRef.current;
-    pad.pause();
-    pad.currentTime = 0;
-    pad.volume = volume / 100;
-    pad.play();
-  }, [power, setDisplay, triggerKey, volume, bank.pads]);
 
   useEffect(() => {
     setFileName(
@@ -73,14 +65,14 @@ const Pad = ({ triggerKey }) => {
     // dependency array otherwise
     const handleKeyPress = (e) => {
       if (e.key === triggerKey || e.key === triggerKey.toLowerCase()) {
-        playSound();
+        playSound({triggerKey: triggerKey, volume: volume });;
       }
     };
     document.addEventListener("keypress", handleKeyPress);
     return () => {
       document.removeEventListener("keypress", handleKeyPress);
     };
-  }, [bank, playSound, triggerKey]);
+  }, [bank, triggerKey, volume]);
 
   return (
     <PadContainer>
@@ -88,7 +80,7 @@ const Pad = ({ triggerKey }) => {
         ref={padButtonRef}
         className="drum-pad"
         id={`drum-pad-${triggerKey}`}
-        onClick={playSound}
+        onClick={() => {playSound({triggerKey: triggerKey, volume: volume})}}
         disabled={!power}
       >
         <audio

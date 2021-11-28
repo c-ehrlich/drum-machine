@@ -1,16 +1,17 @@
 import useStore from "../store";
 
-const playSound = (triggerKey) => {
+const playSound = ({triggerKey, volume}) => {
   const power = useStore.getState().power;
-  const sequencerIsPlaying = useStore.getState().sequencerIsPlaying;
-
-  if (power && sequencerIsPlaying) {
-    const volume = useStore.getState().volume;
-    const pad = document.querySelector(`#pad-${triggerKey}`);
-    pad.pause();
-    pad.currentTime = 0;
-    pad.volume = volume / 100;
-    pad.play();
+  // asdf
+  if (power) {
+    const padAudio = document.querySelector(`#pad-${triggerKey}`);
+    padAudio.pause();
+    padAudio.currentTime = 0;
+    padAudio.volume = volume / 100;
+    padAudio.play();
+    const padButton = document.querySelector(`#drum-pad-${triggerKey}`);
+    padButton.classList.add("hit");
+    setTimeout(() => {padButton.classList.remove("hit")}, 200);
   }
 };
 
