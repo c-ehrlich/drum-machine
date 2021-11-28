@@ -43,14 +43,18 @@ const BankSelectorButton = styled.button`
 
 const BankSelectorIcon = styled(FontAwesomeIcon)`
   font-size: 18px;
-  color: rgb(51, 51, 51);
-  filter: drop-shadow(0px 1px 3px rgb(118, 118, 118)) drop-shadow(0px -1px 0px black);
+  color: rgb(80, 80, 80);
+  filter: drop-shadow(0px -1px 0px black);
   ${'' /* filter: ; */}
 `;
 
 const BankSelectorSelect = styled.select`
   width: 100%;
-  color: green;
+  color: rgb(209, 209, 209);
+  background-color: rgb(59, 59, 59);
+  border: 3px inset rgb(118, 118, 118);
+  font-family: 'Orbitron', sans-serif;
+  border-radius: 4px;
 `;
 
 const BankSelector = () => {
