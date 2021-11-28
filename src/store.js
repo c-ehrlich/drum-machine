@@ -58,7 +58,6 @@ let useStore = (set) => ({
       sequencerIsPlaying: !state.sequencerIsPlaying,
       currentStep: 0,
     }));
-    console.log("TEMP toggleSequencerIsPlaying");
   },
 
   // volume
