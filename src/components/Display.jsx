@@ -2,11 +2,10 @@ import React from "react";
 import useStore from "../store";
 import styled, { keyframes } from "styled-components";
 
-
-const BreatheAnimation = keyframes`
-  0%   { box-shadow: 0px 0px 12px 2px salmon; }
+const DisplayBreatheAnimation = keyframes`
+  0%   { box-shadow: 0px 0px 12px 2px lightsalmon; }
   50%  { box-shadow: 0px 0px 14px 3px salmon; }
-  100% { box-shadow: 0px 0px 12px 2px salmon; }
+  100% { box-shadow: 0px 0px 12px 2px lightsalmon; }
 `;
 
 const DisplayContainer = styled.div`
@@ -14,11 +13,34 @@ const DisplayContainer = styled.div`
   border: 2px inset rgba(0, 0, 0, 0.4);
   border-radius: 6px;
 
-  animation: ${BreatheAnimation} 3s ease-out infinite;
+  animation: ${DisplayBreatheAnimation} 3s ease-out infinite;
 
   &.off {
     box-shadow: none;
     animation: none;
+  }
+`;
+
+const TextFlickerAnimation = keyframes`
+  0% { 
+    color: #E1F1FF;
+    text-shadow: 2px 0 rgba(255, 0, 0, 0.9), -2px 0 rgba(0, 0, 255, 0.9),
+    1px 1px 2px white, 0 0 1em red, 0 0 0.2em blue;
+    background-color: salmon;
+  }
+  50% {
+    color: #FFE9E1;
+    text-shadow: 1px 0 rgba(255, 0, 0, 0.9), -1px 0 rgba(0, 0, 255, 0.9),
+    1px 1px 2px white, 0 0 1em red, 0 0 0.2em blue;
+    background-color: crimson;
+  }
+
+
+  100% {
+    color: #E1F1FF;
+    text-shadow: 2px 0 rgba(255, 0, 0, 0.9), -2px 0 rgba(0, 0, 255, 0.9),
+    1px 1px 2px white, 0 0 1em red, 0 0 0.2em blue;
+    background-color: salmon;
   }
 `;
 
@@ -31,9 +53,12 @@ const StyledDisplay = styled.div`
   ${"" /* font-family: "Press Start 2P", cursive; */}
   font-family: "DSDigitalBold";
   font-size: 32px;
-  box-shadow: 0px 0px 6px 3px rgb(215, 215, 215);
 
-  background: crimson;
+  
+
+  ${'' /* text */}
+  animation: ${TextFlickerAnimation} 3s ease-out infinite;
+
   background-image: linear-gradient(
       to top,
       rgba(255, 255, 255, 0.2) 33.33333%,
@@ -50,11 +75,6 @@ const StyledDisplay = styled.div`
     );
   background-size: 3px 3px;
   mix-blend-mode: multiply;
-
-  ${"" /* text */}
-  color: white;
-  text-shadow: 2px 0 rgba(255, 0, 0, 0.9), -2px 0 rgba(0, 0, 255, 0.9),
-    1px 1px 2px white, 0 0 1em red, 0 0 0.2em blue;
 
   &.off {
     background-color: black;
