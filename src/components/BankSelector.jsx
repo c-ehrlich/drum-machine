@@ -39,6 +39,11 @@ const BankSelectorButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &:hover {
+    background-color: rgba(215, 215, 215, 0.5);
+    box-shadow: 0px 0px 10px 5px rgba(215, 215, 215, 0.5);
+  }
 `;
 
 const BankSelectorIcon = styled(FontAwesomeIcon)`
