@@ -35,9 +35,8 @@ const PadButton = styled.button`
   transition: 200ms;
 
   &:hover {
-    ${'' /* color: #bbbbbb; */}
-    border-style: inset;
-    border-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(215, 215, 215, 0.5);
+    box-shadow: 0px 0px 10px 5px rgba(215, 215, 215, 0.5);
   }
 
   &.hit {
