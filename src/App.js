@@ -13,15 +13,30 @@ const AppDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  background-color: grey;
+  background-image: url(${process.env.PUBLIC_URL + `/images/wood1.jpg`});
+
 `;
+
+const DrumMachineBorder = styled.div`
+  background-image: url(${process.env.PUBLIC_URL + `/images/wood2.jpg`});
+  background-size: cover;
+`
 
 const DrumMachineContainer = styled.div`
   background-color: #333333;
-  margin-top: 32px;
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(17, 17, 17) 12.5%,
+    rgb(67, 67, 67) 25%,
+    rgb(17, 17, 17) 50%,
+    rgb(67, 67, 67) 75%,
+    rgb(17, 17, 17) 100%
+  );
   padding: 32px;
   display: flex;
-  border-left: 32px solid black;
-  border-right: 32px solid black;
+  margin: 0 32px;
   flex-direction: column;
   align-items: center;
   gap: 32px;
@@ -39,15 +54,17 @@ function App() {
   return (
     <AppDiv className="App">
       <GlobalFonts />
-      <DrumMachineContainer>
-        <HeaderRow>
-          <Title />
-          <PowerButton />
-        </HeaderRow>
-        <Pads />
-        <Controls />
-        <Sequencer />
-      </DrumMachineContainer>
+      <DrumMachineBorder>
+        <DrumMachineContainer>
+          <HeaderRow>
+            <Title />
+            <PowerButton />
+          </HeaderRow>
+          <Pads />
+          <Controls />
+          <Sequencer />
+        </DrumMachineContainer>
+      </DrumMachineBorder>
     </AppDiv>
   );
 }
