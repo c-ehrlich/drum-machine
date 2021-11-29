@@ -3,22 +3,47 @@ import useStore from "../store";
 import styled from "styled-components";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlay, faStop } from "@fortawesome/free-solid-svg-icons";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
 const PlayStopButton = styled.div`
-  background-color: yellow;
+  background-color: rgb(118, 118, 118);
   width: 48px;
   height: 48px;
-  border-radius: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-`
+
+  border-radius: 8px;
+  border-style: outset;
+  border-color: rgba(255, 255, 255, 0.125);
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(215, 215, 215, 0.5);
+    box-shadow: 0px 0px 10px 5px rgba(215, 215, 215, 0.5);
+  }
+
+  &.playing {
+    background-color: salmon;
+    box-shadow: 0px 0px 10px 5px salmon;
+  }
+`;
 
 const PlayStopIcon = styled(FontAwesomeIcon)`
-  color: green;
+  color: rgb(80, 80, 80);
   cursor: pointer;
   font-size: 24px;
+  filter: drop-shadow(0px -1px 0px black);
+
+  &:hover {
+    color: rgb(80, 80, 80);
+    filter: drop-shadow(0px -1px 0px black);
+  }
+  &.playing {
+    color: indianred;
+    filter: drop-shadow(0px -1px 0px firebrick);
+  }
 `;
 
 const SequencerIsPlaying = () => {
@@ -32,8 +57,15 @@ const SequencerIsPlaying = () => {
   };
 
   return (
-    <PlayStopButton onClick={handleClick}>
-      <PlayStopIcon icon={sequencerIsPlaying ? faStop : faPlay} />
+    <PlayStopButton
+      onClick={handleClick}
+      className={sequencerIsPlaying ? "playing" : null}
+    >
+      <PlayStopIcon
+        icon={faPlay}
+        // icon={sequencerIsPlaying ? faStop : faPlay}
+        className={sequencerIsPlaying ? "playing" : null}
+      />
     </PlayStopButton>
   );
 };

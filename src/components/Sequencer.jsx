@@ -12,6 +12,9 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 const SequencerOuter = styled.div`
   width: 100%;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 `;
 const SequencerControls = styled.div`
   width: 100%;
