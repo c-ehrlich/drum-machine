@@ -1,24 +1,22 @@
 {
   "files": {
-    "main.css": "/drum-machine/static/css/main.61262162.chunk.css",
-    "main.js": "/drum-machine/static/js/main.6195456c.chunk.js",
-    "main.js.map": "/drum-machine/static/js/main.6195456c.chunk.js.map",
-    "runtime-main.js": "/drum-machine/static/js/runtime-main.08529bb1.js",
-    "runtime-main.js.map": "/drum-machine/static/js/runtime-main.08529bb1.js.map",
-    "static/js/2.0db8ba31.chunk.js": "/drum-machine/static/js/2.0db8ba31.chunk.js",
-    "static/js/2.0db8ba31.chunk.js.map": "/drum-machine/static/js/2.0db8ba31.chunk.js.map",
-    "static/js/3.84077ee1.chunk.js": "/drum-machine/static/js/3.84077ee1.chunk.js",
-    "static/js/3.84077ee1.chunk.js.map": "/drum-machine/static/js/3.84077ee1.chunk.js.map",
+    "main.css": "/drum-machine/static/css/main.fdce0079.chunk.css",
+    "main.js": "/drum-machine/static/js/main.b49ef79c.chunk.js",
+    "main.js.map": "/drum-machine/static/js/main.b49ef79c.chunk.js.map",
+    "runtime-main.js": "/drum-machine/static/js/runtime-main.15877bed.js",
+    "runtime-main.js.map": "/drum-machine/static/js/runtime-main.15877bed.js.map",
+    "static/js/2.21dd3e35.chunk.js": "/drum-machine/static/js/2.21dd3e35.chunk.js",
+    "static/js/2.21dd3e35.chunk.js.map": "/drum-machine/static/js/2.21dd3e35.chunk.js.map",
     "index.html": "/drum-machine/index.html",
-    "static/css/main.61262162.chunk.css.map": "/drum-machine/static/css/main.61262162.chunk.css.map",
-    "static/js/2.0db8ba31.chunk.js.LICENSE.txt": "/drum-machine/static/js/2.0db8ba31.chunk.js.LICENSE.txt",
-    "static/media/DSDigitalBold.09226874.woff2": "/drum-machine/static/media/DSDigitalBold.09226874.woff2",
-    "static/media/DSDigitalBold.746ffb04.woff": "/drum-machine/static/media/DSDigitalBold.746ffb04.woff"
+    "static/css/main.fdce0079.chunk.css.map": "/drum-machine/static/css/main.fdce0079.chunk.css.map",
+    "static/js/2.21dd3e35.chunk.js.LICENSE.txt": "/drum-machine/static/js/2.21dd3e35.chunk.js.LICENSE.txt",
+    "static/media/D7Mono.aaf571fa.woff2": "/drum-machine/static/media/D7Mono.aaf571fa.woff2",
+    "static/media/D7Mono.cea5d881.woff": "/drum-machine/static/media/D7Mono.cea5d881.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.08529bb1.js",
-    "static/js/2.0db8ba31.chunk.js",
-    "static/css/main.61262162.chunk.css",
-    "static/js/main.6195456c.chunk.js"
+    "static/js/runtime-main.15877bed.js",
+    "static/js/2.21dd3e35.chunk.js",
+    "static/css/main.fdce0079.chunk.css",
+    "static/js/main.b49ef79c.chunk.js"
   ]
 }
