@@ -18,20 +18,20 @@
           "file": "kick8.mp3"
         },
         "R": {
-          "name": "High Hat 1",
-          "file": "highhat3.mp3"
-        },
-        "A": {
           "name": "Snare 1",
           "file": "snare1.mp3"
         },
-        "S": {
+        "A": {
           "name": "Snare 2",
           "file": "snare6.mp3"
         },
-        "D": {
+        "S": {
           "name": "Snare 3",
           "file": "snare7.mp3"
+        },
+        "D": {
+          "name": "High Hat 1",
+          "file": "highhat3.mp3"
         },
         "F": {
           "name": "High Hat 2",
