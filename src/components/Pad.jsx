@@ -60,19 +60,8 @@ const Pad = ({ triggerKey }) => {
       process.env.PUBLIC_URL +
         `/sounds/${bank.url}/${bank.pads[triggerKey].file}`
     );
-    // putting this in here because it needs to be a callback with a huge
-    // dependency array otherwise
-    const handleKeyPress = (e) => {
-      if (e.key === triggerKey || e.key === triggerKey.toLowerCase()) {
-        setDisplay(bank.pads[triggerKey].name);
-        playSound({ triggerKey: triggerKey, volume: volume });
-      }
-    };
-    document.addEventListener("keypress", handleKeyPress);
-    return () => {
-      document.removeEventListener("keypress", handleKeyPress);
-    };
-  }, [bank, triggerKey, volume]);
+    
+  }, [bank, triggerKey, volume, setDisplay]);
 
   return (
     <PadContainer>
