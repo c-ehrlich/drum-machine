@@ -106,15 +106,6 @@ const Sequencer = () => {
 
   return (
     <SequencerOuter>
-      <SequencerControls>
-        <SequencerControlsLeft>
-          <TitleText>
-            <ContrastText>JS</ContrastText>equencer
-          </TitleText>
-          <SequencerIsPlaying />
-        </SequencerControlsLeft>
-        <SequencerBPM />
-      </SequencerControls>
       <SequencerRowsContainer>
         {keys.map((button) => {
           return (
@@ -145,6 +136,15 @@ const Sequencer = () => {
           );
         })}
       </SequencerRowsContainer>
+      <SequencerControls>
+        <SequencerControlsLeft>
+          <TitleText>
+            <ContrastText>JS</ContrastText>equencer
+          </TitleText>
+          <SequencerIsPlaying />
+        </SequencerControlsLeft>
+        <SequencerBPM />
+      </SequencerControls>
     </SequencerOuter>
   );
 };

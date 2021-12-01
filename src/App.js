@@ -16,16 +16,15 @@ const AppDiv = styled.div`
   justify-content: center;
   background-color: grey;
   background-image: url(${process.env.PUBLIC_URL + `/images/wood1.jpg`});
-
 `;
 
 const DrumMachineBorder = styled.div`
   background-image: url(${process.env.PUBLIC_URL + `/images/wood2.jpg`});
   background-size: cover;
   box-shadow: 0px 0px 15px 3px black;
-`
+`;
 
-const DrumMachineContainer = styled.div`
+const DrumMachineOuterContainer = styled.div`
   background-color: #333333;
   background-image: linear-gradient(
     to right bottom,
@@ -36,13 +35,26 @@ const DrumMachineContainer = styled.div`
     rgb(17, 17, 17) 100%
   );
   padding: 32px;
+  margin: 0 32px; /* what does this do? */
+
   display: flex;
-  margin: 0 32px;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   gap: 32px;
 `;
 
+const DrumMachineLeftContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+`;
+
+const DrumMachineLeftBottomContainer = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: space-between;
+`
 const HeaderRow = styled.div`
   width: 100%;
   display: flex;
@@ -52,19 +64,24 @@ const HeaderRow = styled.div`
 `;
 
 function App() {
+  // VIEWPORT WIDTH LESS THAN 1200: put in a column
   return (
     <AppDiv className="App">
       <GlobalFonts />
       <DrumMachineBorder>
-        <DrumMachineContainer>
-          <HeaderRow>
-            <Title />
-            <PowerButton />
-          </HeaderRow>
-          <Pads />
-          <Controls />
+        <DrumMachineOuterContainer>
+          <DrumMachineLeftContainer>
+            <HeaderRow>
+              <PowerButton />
+              <Title />
+            </HeaderRow>
+            <DrumMachineLeftBottomContainer>
+              <Controls />
+              <Pads />
+            </DrumMachineLeftBottomContainer>
+          </DrumMachineLeftContainer>
           <Sequencer />
-        </DrumMachineContainer>
+        </DrumMachineOuterContainer>
       </DrumMachineBorder>
     </AppDiv>
   );

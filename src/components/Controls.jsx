@@ -6,25 +6,26 @@ import BankSelector from "./BankSelector";
 
 const ControlsContainer = styled.div`
   width: 100%;
+  height: 300px;
   display: grid;
-  gap: 16px;
-  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  grid-template-rows 1fr 1fr;
 `;
 
-const ControlsColumn = styled.div`
+const ControlsRow = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
 `;
 
 const Controls = () => {
   return (
     <ControlsContainer>
       <Display />
-      <ControlsColumn>
+      <ControlsRow>
         <Volume />
         <BankSelector />
-      </ControlsColumn>
+      </ControlsRow>
     </ControlsContainer>
   );
 };
