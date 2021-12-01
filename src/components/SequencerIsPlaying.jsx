@@ -28,6 +28,10 @@ const PlayStopButton = styled.div`
     background-color: salmon;
     box-shadow: 0px 0px 10px 5px salmon;
   }
+
+  &.playing:hover {
+    box-shadow: 0px 0px 12px 6px salmon;
+  }
 `;
 
 const PlayStopIcon = styled(FontAwesomeIcon)`

@@ -39,6 +39,11 @@ const StyledSequencerButton = styled.button`
     box-shadow: 0px 0px 10px 5px salmon;
     transition: 500ms;
   }
+
+  &.pass:hover {
+    transition: 100ms;
+    box-shadow: 0px 0px 12px 6px salmon;
+  }
 `;
 
 const SequencerButton = ({ button, step }) => {
