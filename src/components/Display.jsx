@@ -51,7 +51,7 @@ const StyledDisplay = styled.div`
   align-items: center;
   justify-content: center;
   ${"" /* font-family: "Press Start 2P", cursive; */}
-  font-family: "DSDigitalBold";
+  font-family: "D7Mono";
   font-size: 32px;
 
   
