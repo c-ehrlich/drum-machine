@@ -18,7 +18,7 @@ const Volume = () => {
   const handleVolumeChange = (e) => {
     const volume = e.target.value;
     setVolume(volume);
-    setDisplay(`Volume: ${volume}%`);
+    setDisplay(`Volume ${String(volume).padStart(3, '0')}%`);
   };
 
   return (

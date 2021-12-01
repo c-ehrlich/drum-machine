@@ -17,7 +17,7 @@ const SequencerBPM = () => {
 
   const handleBPMChange = (bpm) => {
     setSequencerBPM(bpm);
-    setDisplay(`${sequencerBPM} bpm`);
+    setDisplay(`${String(sequencerBPM).padStart(3, '0')} bpm`);
   }
 
   return (

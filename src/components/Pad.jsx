@@ -50,10 +50,10 @@ const Pad = ({ triggerKey }) => {
   const [fileName, setFileName] = useState("");
   const power = useStore((state) => state.power);
   const bank = useStore((state) => state.bank);
+  const setDisplay = useStore((state) => state.setDisplay);
   const volume = useStore((state) => state.volume);
   const padButtonRef = useRef();
   const padAudioRef = useRef();
-
 
   useEffect(() => {
     setFileName(
@@ -64,7 +64,8 @@ const Pad = ({ triggerKey }) => {
     // dependency array otherwise
     const handleKeyPress = (e) => {
       if (e.key === triggerKey || e.key === triggerKey.toLowerCase()) {
-        playSound({triggerKey: triggerKey, volume: volume });;
+        setDisplay(bank.pads[triggerKey].name);
+        playSound({ triggerKey: triggerKey, volume: volume });
       }
     };
     document.addEventListener("keypress", handleKeyPress);
@@ -79,7 +80,10 @@ const Pad = ({ triggerKey }) => {
         ref={padButtonRef}
         className="drum-pad"
         id={`drum-pad-${triggerKey}`}
-        onClick={() => {playSound({triggerKey: triggerKey, volume: volume})}}
+        onClick={() => {
+          setDisplay(bank.pads[triggerKey].name);
+          playSound({ triggerKey: triggerKey, volume: volume });
+        }}
         disabled={!power}
       >
         <audio
