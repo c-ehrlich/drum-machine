@@ -4,6 +4,7 @@ import Display from "./Display";
 import Volume from "./Volume";
 import BankSelector from "./BankSelector";
 
+
 const ControlsContainer = styled.div`
   width: 100%;
   height: 300px;
