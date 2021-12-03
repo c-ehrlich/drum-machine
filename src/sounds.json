@@ -3,7 +3,6 @@
     {
       "name": "Nujabes",
       "url": "nujabes",
-      "color": "#ff0000",
       "pads": {
         "Q": {
           "name": "Kick 1",
@@ -56,112 +55,56 @@
       }
     },
     {
-      "name": "808's",
-      "url": "808s",
-      "color": "#00ff00",
+      "name": "MF Doom",
+      "url": "doom",
       "pads": {
         "Q": {
-          "name": "808 1",
-          "file": "808 (Love Lockdown).mp3"
+          "name": "James",
+          "file": "James Hit.mp3"
         },
         "W": {
-          "name": "808 2",
-          "file": "808 (Bad News).mp3"
+          "name": "Kick 1",
+          "file": "Kick (Fancy Clown).mp3"
         },
         "E": {
-          "name": "Kick",
-          "file": "Kick (Amazing).mp3"
+          "name": "Kick 2",
+          "file": "Kick (Doomsday).mp3"
         },
         "R": {
-          "name": "Choir",
-          "file": "Choir (Say You Will).mp3"
-        },
-        "A": {
-          "name": "Snare",
-          "file": "80s Snare (Paranoid).mp3"
-        },
-        "S": {
-          "name": "Moog",
-          "file": "Fat Moog (Paranoid).mp3"
-        },
-        "D": {
-          "name": "Effect",
-          "file": "Effect (Welcome to Heartbreak).mp3"
-        },
-        "F": {
-          "name": "Beep",
-          "file": "Snare (Say You Will).mp3"
-        },
-        "Z": {
-          "name": "Snare",
-          "file": "909 Snare (Paranoid).mp3"
-        },
-        "X": {
-          "name": "Perc",
-          "file": "Perc (Paranoid).mp3"
-        },
-        "C": {
-          "name": "Taiko",
-          "file": "Taiko Tom (Say You Will).mp3"
-        },
-        "V": {
-          "name": "Hat",
-          "file": "Hat (Coldest Winter).mp3"
-        }
-      }
-    },
-    {
-      "name": "UK Drill",
-      "url": "uk-drill",
-      "color": "#444444",
-      "pads": {
-        "Q": {
-          "name": "808 1",
-          "file": "Rust 808.mp3"
-        },
-        "W": {
-          "name": "808 2",
-          "file": "Creed 808.mp3"
-        },
-        "E": {
-          "name": "808 3",
-          "file": "Dirty 808.mp3"
-        },
-        "R": {
-          "name": "808 4",
-          "file": "Aggressive 808.mp3"
-        },
-        "A": {
-          "name": "Kick",
-          "file": "Rack Kick.mp3"
-        },
-        "S": {
-          "name": "Woah",
-          "file": "Woah Vox.mp3"
-        },
-        "D": {
           "name": "Snare 1",
-          "file": "M1 Snare.mp3"
+          "file": "Snare (Go With The Flow).mp3"
+        },
+        "A": {
+          "name": "Snare 2",
+          "file": "Snare (Doomsday).mp3"
+        },
+        "S": {
+          "name": "Snare 3",
+          "file": "Snare (Figaro).mp3"
+        },
+        "D": {
+          "name": "Hi Hat",
+          "file": "HiHat (Doomsday).mp3"
         },
         "F": {
-          "name": "Snare 2",
-          "file": "Light Snare.mp3"
+          "name": "Rim",
+          "file": "Rim.mp3"
         },
         "Z": {
-          "name": "Hi Hat 1",
-          "file": "Drill Hi Hat 1.mp3"
+          "name": "Keys",
+          "file": "Keys.mp3"
         },
         "X": {
-          "name": "Hi Hat 2",
-          "file": "Drill Hi Hat 2.mp3"
+          "name": "Shoryuken",
+          "file": "Shoryuken.mp3"
         },
         "C": {
-          "name": "Rim",
-          "file": "Hollow Rim.mp3"
+          "name": "Shaker",
+          "file": "SHAKER II.mp3"
         },
         "V": {
-          "name": "Clap",
-          "file": "Cheap Clap.mp3"
+          "name": "Vox",
+          "file": "hip hop.mp3"
         }
       }
     }
