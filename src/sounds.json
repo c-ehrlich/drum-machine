@@ -107,6 +107,60 @@
           "file": "hip hop.mp3"
         }
       }
+    },
+    {
+      "name": "Tyler The Creator",
+      "url": "tyler",
+      "pads": {
+        "Q": {
+          "name": "Horn",
+          "file": "Horn Hit.mp3"
+        },
+        "W": {
+          "name": "Kick 1",
+          "file": "Kick (YONKERS).mp3"
+        },
+        "E": {
+          "name": "Kick 2",
+          "file": "Loiter Squad Kick.mp3"
+        },
+        "R": {
+          "name": "Snare 1",
+          "file": "EARFQUAKE Snare.mp3"
+        },
+        "A": {
+          "name": "Snare 2",
+          "file": "Pharrell Snare.mp3"
+        },
+        "S": {
+          "name": "Clap",
+          "file": "EARFQUAKE Reverb Clap.mp3"
+        },
+        "D": {
+          "name": "Hat",
+          "file": "Tyler HH.mp3"
+        },
+        "F": {
+          "name": "Hi Tom",
+          "file": "Hi Tom (See You Again).mp3"
+        },
+        "Z": {
+          "name": "Tron",
+          "file": "Tron Cat Cowbell.mp3"
+        },
+        "X": {
+          "name": "Four",
+          "file": "FOOR.mp3"
+        },
+        "C": {
+          "name": "Yonk",
+          "file": "Hit (Yonkers).mp3"
+        },
+        "V": {
+          "name": "Nikes",
+          "file": "frank ocean nikes sound.mp3"
+        }
+      }
     }
   ]
 }
