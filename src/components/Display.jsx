@@ -26,7 +26,7 @@ const TextFlickerAnimation = keyframes`
     color: #E1F1FF;
     text-shadow: 2px 0 rgba(255, 0, 0, 0.9), -2px 0 rgba(0, 0, 255, 0.9),
     1px 1px 2px white, 0 0 1em red, 0 0 0.2em blue;
-    background-color: salmon;
+    background-color: #8C0000;
   }
   50% {
     color: #FFE9E1;
@@ -40,7 +40,7 @@ const TextFlickerAnimation = keyframes`
     color: #E1F1FF;
     text-shadow: 2px 0 rgba(255, 0, 0, 0.9), -2px 0 rgba(0, 0, 255, 0.9),
     1px 1px 2px white, 0 0 1em red, 0 0 0.2em blue;
-    background-color: salmon;
+    background-color: #8C0000;
   }
 `;
 
