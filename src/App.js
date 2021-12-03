@@ -17,6 +17,7 @@ const AppDiv = styled.div`
   justify-content: center;
   background-color: grey;
   background-image: url(${process.env.PUBLIC_URL + `/images/wood1.jpg`});
+  background-size: cover;
   gap: 0px;
 `;
 
