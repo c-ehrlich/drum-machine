@@ -3,7 +3,6 @@ import useStore from "../store";
 import soundBanks from "../sounds.json";
 import LabelText from "../styled";
 import styled from "styled-components";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,

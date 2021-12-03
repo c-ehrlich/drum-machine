@@ -51,9 +51,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   background: rgb(55, 55, 55);
 }
 
-
-/* compatibility stuff */
-
+/* Range Sliders compatibility stuff */
 
 input[type=range]::-moz-range-track {
   background: rgb(55, 55, 55);
@@ -90,6 +88,6 @@ input[type=range]::-moz-range-thumb {
  * who use that browser don't deserve nice things. 
  */
 
- /*
-  * END RANGE SLIDERS
-  */
+/*
+ * END RANGE SLIDERS
+ */

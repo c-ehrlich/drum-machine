@@ -18,16 +18,14 @@ const PadButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-
   background-color: rgb(118, 118, 118);
+  cursor: pointer;
 
   ${"" /* border */}
   border-radius: 8px;
   border-style: outset;
   border-color: rgba(255, 255, 255, 0.125);
   border-width: 2px;
-
-  cursor: pointer;
 
   ${"" /* text */}
   color: transparent;
@@ -60,7 +58,6 @@ const Pad = ({ triggerKey }) => {
       process.env.PUBLIC_URL +
         `/sounds/${bank.url}/${bank.pads[triggerKey].file}`
     );
-    
   }, [bank, triggerKey, volume, setDisplay]);
 
   return (

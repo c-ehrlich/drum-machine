@@ -219,26 +219,4 @@ const sequencerInit = {
   },
 };
 
-
-// this currently crashes the site
-// figure out what's wrong
-// until then, keep using the bad declarative version
-
-// const keysForGenerateSequencerInit = keys;
-// const generateSequencerInit = (
-//   keys = keysForGenerateSequencerInit,
-//   steps = 16
-// ) => {
-//   let sequencerInit = {};
-//   for (let key of keys) {
-//     sequencerInit[key] = {};
-//     for (let step of steps) {
-//       sequencerInit[key][step] = false;
-//     }
-//   }
-//   console.log(sequencerInit);
-//   return sequencerInit;
-// };
-
 export default sequencerInit;
-// export default generateSequencerInit;

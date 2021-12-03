@@ -7,12 +7,10 @@ const StyledSequencerButton = styled.button`
   height: 32px;
   width: 24px;
   background-color: rgb(118, 118, 118);
-
   border-radius: 4px;
   border-style: outset;
   border-color: rgba(255, 255, 255, 0.125);
   border-width: 2px;
-
   cursor: pointer;
 
   transition: 0ms;
@@ -53,8 +51,6 @@ const SequencerButton = ({ button, step }) => {
   const currentStep = useStore((state) => state.currentStep);
   const volume = useStore((state) => state.volume);
 
-  // TODO get everything we need for 
-
   useEffect(() => {
     if (isOn && currentStep === step) {
       playSound({triggerKey: button, volume: volume });
@@ -87,7 +83,6 @@ const SequencerButton = ({ button, step }) => {
       onClick={handleClick}
       className={assignButtonClass()}
     >
-      {/* <div>{isOn ? "x" : "o"}</div> */}
     </StyledSequencerButton>
   );
 };

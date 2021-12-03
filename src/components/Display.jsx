@@ -12,7 +12,6 @@ const DisplayContainer = styled.div`
   background-color: white;
   border: 2px inset rgba(0, 0, 0, 0.4);
   border-radius: 6px;
-
   animation: ${DisplayBreatheAnimation} 3s ease-out infinite;
 
   &.off {
@@ -34,8 +33,6 @@ const TextFlickerAnimation = keyframes`
     1px 1px 2px white, 0 0 1em red, 0 0 0.2em blue;
     background-color: crimson;
   }
-
-
   100% {
     color: #E1F1FF;
     text-shadow: 2px 0 rgba(255, 0, 0, 0.9), -2px 0 rgba(0, 0, 255, 0.9),
@@ -50,13 +47,10 @@ const StyledDisplay = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  ${"" /* font-family: "Press Start 2P", cursive; */}
   font-family: "D7Mono";
   font-size: 32px;
 
-  
-
-  ${'' /* text */}
+  ${"" /* text */}
   animation: ${TextFlickerAnimation} 3s ease-out infinite;
 
   background-image: linear-gradient(

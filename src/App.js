@@ -64,6 +64,7 @@ const DrumMachineBottomContainer = styled.div`
   gap: 32px;
   justify-content: space-between;
 `;
+
 const HeaderRow = styled.div`
   width: 100%;
   display: flex;

@@ -43,6 +43,7 @@ const PlayStopIcon = styled(FontAwesomeIcon)`
     color: rgb(80, 80, 80);
     filter: drop-shadow(0px -1px 0px black);
   }
+
   &.playing {
     color: indianred;
     filter: drop-shadow(0px -1px 0px firebrick);
@@ -66,7 +67,6 @@ const SequencerIsPlaying = () => {
     >
       <PlayStopIcon
         icon={faPlay}
-        // icon={sequencerIsPlaying ? faStop : faPlay}
         className={sequencerIsPlaying ? "playing" : null}
       />
     </PlayStopButton>

@@ -19,11 +19,13 @@ const SequencerOuter = styled.div`
   the correct way of doing it. */}
   gap: 25px;
 `;
+
 const SequencerControls = styled.div`
   width: 100%;
   display: flex;
   gap: 32px;
 `;
+
 const SequencerRowsContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -32,6 +34,7 @@ const SequencerRowsContainer = styled.div`
   justify-content: space-between;
   gap: 8px;
 `;
+
 const SequencerRow = styled.div`
   width: 100%;
   display: flex;
@@ -39,17 +42,20 @@ const SequencerRow = styled.div`
   flex-direction: row;
   align-items: center;
 `;
+
 const SequencerBlock = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 `;
+
 const SequencerButtonBlock = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
 `;
+
 const DeleteRowIcon = styled(FontAwesomeIcon)`
   color: rgb(118,118,118);
   font-size: 24px;

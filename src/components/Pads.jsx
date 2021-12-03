@@ -8,7 +8,6 @@ import playSound from "../tools/playSound";
 // TODO get this by iterating through the bank instead
 // (after passing the FCC requirements, because those don't allow us to have more pads)
 // also try to get 1, 2, 3, 4 back in the grid
-
 const PadsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 120px);

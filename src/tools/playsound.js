@@ -2,7 +2,6 @@ import useStore from "../store";
 
 const playSound = ({triggerKey, volume}) => {
   const power = useStore.getState().power;
-  // asdf
   if (power) {
     const padAudio = document.querySelector(`#pad-${triggerKey}`);
     padAudio.pause();
