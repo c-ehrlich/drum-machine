@@ -17,6 +17,7 @@ const AppDiv = styled.div`
   justify-content: center;
   background-color: grey;
   background-image: url(${process.env.PUBLIC_URL + `/images/wood1.jpg`});
+  gap: 0px;
 `;
 
 const DrumMachineBorder = styled.div`
@@ -72,6 +73,20 @@ const ScreenSizeReminder = styled.h1`
   text-align: center;
 `;
 
+const Credits = styled.div`
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.25);
+`;
+
+const GitHubLink = styled.a`
+  color: rgba(0, 0, 0, 0.25);
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.5);
+  }
+`
+
 function App() {
   const windowSize = useWindowSize();
 
@@ -104,6 +119,7 @@ function App() {
           </ScreenSizeReminder>
         </div>
       )}
+      <Credits>MADE WITH LOVE BY <GitHubLink href="https://www.github.com/c-ehrlich/">CHRISTOPHER EHRLICH</GitHubLink></Credits>
     </AppDiv>
   );
 }
