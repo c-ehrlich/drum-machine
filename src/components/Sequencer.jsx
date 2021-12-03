@@ -11,10 +11,9 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const SequencerOuter = styled.div`
   width: 100%;
-  margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  justify-content: space-between;
 `;
 const SequencerControls = styled.div`
   width: 100%;
@@ -106,6 +105,15 @@ const Sequencer = () => {
 
   return (
     <SequencerOuter>
+      <SequencerControls>
+        <SequencerBPM />
+        <SequencerControlsLeft>
+          <TitleText>
+            <ContrastText>JS</ContrastText>equencer
+          </TitleText>
+          <SequencerIsPlaying />
+        </SequencerControlsLeft>
+      </SequencerControls>
       <SequencerRowsContainer>
         {keys.map((button) => {
           return (
@@ -136,15 +144,6 @@ const Sequencer = () => {
           );
         })}
       </SequencerRowsContainer>
-      <SequencerControls>
-        <SequencerControlsLeft>
-          <TitleText>
-            <ContrastText>JS</ContrastText>equencer
-          </TitleText>
-          <SequencerIsPlaying />
-        </SequencerControlsLeft>
-        <SequencerBPM />
-      </SequencerControls>
     </SequencerOuter>
   );
 };

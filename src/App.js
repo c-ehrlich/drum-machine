@@ -6,6 +6,7 @@ import Controls from "./components/Controls";
 import Sequencer from "./components/Sequencer";
 import PowerButton from "./components/PowerButton";
 import GlobalFonts from "./fonts/fonts";
+import useWindowSize from "./hooks/useWindowSize";
 
 const AppDiv = styled.div`
   min-height: 100vh;
@@ -19,6 +20,7 @@ const AppDiv = styled.div`
 `;
 
 const DrumMachineBorder = styled.div`
+  margin: 16px;
   background-image: url(${process.env.PUBLIC_URL + `/images/wood2.jpg`});
   background-size: cover;
   box-shadow: 0px 0px 15px 3px black;
@@ -39,7 +41,7 @@ const DrumMachineOuterContainer = styled.div`
 
   display: flex;
   flex-direction: row;
-  gap: 32px;
+  gap: 64px;
 `;
 
 const DrumMachineLeftContainer = styled.div`
@@ -54,7 +56,7 @@ const DrumMachineLeftBottomContainer = styled.div`
   flex-direction: column;
   gap: 32px;
   justify-content: space-between;
-`
+`;
 const HeaderRow = styled.div`
   width: 100%;
   display: flex;
@@ -63,26 +65,45 @@ const HeaderRow = styled.div`
   justify-content: space-between;
 `;
 
+const ScreenSizeReminder = styled.h1`
+  margin: 32px;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  text-align: center;
+`;
+
 function App() {
-  // VIEWPORT WIDTH LESS THAN 1200: put in a column
+  const windowSize = useWindowSize();
+
   return (
     <AppDiv className="App">
-      <GlobalFonts />
-      <DrumMachineBorder>
-        <DrumMachineOuterContainer>
-          <DrumMachineLeftContainer>
-            <HeaderRow>
-              <PowerButton />
-              <Title />
-            </HeaderRow>
-            <DrumMachineLeftBottomContainer>
-              <Controls />
-              <Pads />
-            </DrumMachineLeftBottomContainer>
-          </DrumMachineLeftContainer>
-          <Sequencer />
-        </DrumMachineOuterContainer>
-      </DrumMachineBorder>
+      {windowSize.width > 800 ? (
+        <>
+          <GlobalFonts />
+          <DrumMachineBorder>
+            <DrumMachineOuterContainer>
+              <DrumMachineLeftContainer>
+                <HeaderRow>
+                  <PowerButton />
+                  <Title />
+                </HeaderRow>
+                <DrumMachineLeftBottomContainer>
+                  <Controls />
+                  <Pads />
+                </DrumMachineLeftBottomContainer>
+              </DrumMachineLeftContainer>
+              <Sequencer />
+            </DrumMachineOuterContainer>
+          </DrumMachineBorder>
+        </>
+      ) : (
+        <div>
+          <ScreenSizeReminder>
+            Display width needs to be at least 800px. This app is designed for
+            tablets and PCs, but not for phones and other small-screen devices.
+          </ScreenSizeReminder>
+        </div>
+      )}
     </AppDiv>
   );
 }
