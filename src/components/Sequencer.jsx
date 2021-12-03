@@ -54,6 +54,10 @@ const DeleteRowIcon = styled(FontAwesomeIcon)`
   color: rgb(118,118,118);
   font-size: 24px;
   cursor: pointer;
+  ${'' /* TODO figure out a good way to offset the icons
+  probably don't want to put them on a background/button
+  so maybe a good drop-shadow? */}
+  ${'' /* filter: drop-shadow(0px 2px 0px rgba(255, 255, 255, 0.125)); */}
 
   &:hover {
     color: rgb(215, 215, 215);
