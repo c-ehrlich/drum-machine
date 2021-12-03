@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const SequencerOuter = styled.div`
-  width: 100%;
+  width: 520px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -21,16 +21,8 @@ const SequencerOuter = styled.div`
 `;
 const SequencerControls = styled.div`
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-`;
-const SequencerControlsLeft = styled.div`
   display: flex;
-  flex-direction: row;
-  gap: 16px;
-  align-items: center;
-  justify-content: space-between;
+  gap: 32px;
 `;
 const SequencerRowsContainer = styled.div`
   width: 100%;
@@ -113,12 +105,7 @@ const Sequencer = () => {
     <SequencerOuter>
       <SequencerControls>
         <SequencerBPM />
-        <SequencerControlsLeft>
-          <TitleText>
-            <ContrastText>JS</ContrastText>equencer
-          </TitleText>
-          <SequencerIsPlaying />
-        </SequencerControlsLeft>
+        <SequencerIsPlaying />
       </SequencerControls>
       <SequencerRowsContainer>
         {keys.map((button) => {
