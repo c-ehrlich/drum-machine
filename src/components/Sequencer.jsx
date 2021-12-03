@@ -14,6 +14,10 @@ const SequencerOuter = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  ${'' /* TODO this 25px gap is a dumb hack
+  to align things vertically. figure out
+  the correct way of doing it. */}
+  gap: 25px;
 `;
 const SequencerControls = styled.div`
   width: 100%;
@@ -30,8 +34,10 @@ const SequencerControlsLeft = styled.div`
 `;
 const SequencerRowsContainer = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 8px;
 `;
 const SequencerRow = styled.div`
