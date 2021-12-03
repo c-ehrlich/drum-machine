@@ -22,6 +22,7 @@ const AppDiv = styled.div`
 const DrumMachineBorder = styled.div`
   background-image: url(${process.env.PUBLIC_URL + `/images/wood2.jpg`});
   background-size: cover;
+  margin: 16px;
   box-shadow: 0px 0px 15px 3px black;
 `
 
