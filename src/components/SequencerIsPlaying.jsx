@@ -7,8 +7,7 @@ import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
 const PlayStopButton = styled.div`
   background-color: rgb(118, 118, 118);
-  width: 48px;
-  height: 48px;
+  width: 54px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -10,30 +10,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const SequencerOuter = styled.div`
-  width: 100%;
-  margin: auto;
+  width: 520px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-top: 16px;
+  justify-content: space-between;
+  ${'' /* TODO this 25px gap is a dumb hack
+  to align things vertically. figure out
+  the correct way of doing it. */}
+  gap: 25px;
 `;
 const SequencerControls = styled.div`
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-`;
-const SequencerControlsLeft = styled.div`
   display: flex;
-  flex-direction: row;
-  gap: 16px;
-  align-items: center;
-  justify-content: space-between;
+  gap: 32px;
 `;
 const SequencerRowsContainer = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 8px;
 `;
 const SequencerRow = styled.div`
@@ -108,13 +104,8 @@ const Sequencer = () => {
   return (
     <SequencerOuter>
       <SequencerControls>
-        <SequencerControlsLeft>
-          <TitleText>
-            <ContrastText>JS</ContrastText>equencer
-          </TitleText>
-          <SequencerIsPlaying />
-        </SequencerControlsLeft>
         <SequencerBPM />
+        <SequencerIsPlaying />
       </SequencerControls>
       <SequencerRowsContainer>
         {keys.map((button) => {
