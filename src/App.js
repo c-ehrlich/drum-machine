@@ -45,15 +45,19 @@ const DrumMachineOuterContainer = styled.div`
   display: flex;
   flex-direction: row;
   gap: 64px;
+
+  @media (max-width: 1280px) {
+    flex-direction: column;
+  }
 `;
 
-const DrumMachineLeftContainer = styled.div`
+const DrumMachineContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 32px;
 `;
 
-const DrumMachineLeftBottomContainer = styled.div`
+const DrumMachineBottomContainer = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -75,40 +79,26 @@ const ScreenSizeReminder = styled.h1`
   text-align: center;
 `;
 
-const Credits = styled.div`
-  font-family: 'Shadows Into Light', cursive;
-  font-size: 16px;
-  color: rgba(0, 0, 0, 0.25);
-`;
-
-const GitHubLink = styled.a`
-  color: rgba(0, 0, 0, 0.25);
-
-  &:hover {
-    color: rgba(0, 0, 0, 0.5);
-  }
-`
-
 function App() {
   const windowSize = useWindowSize();
 
   return (
     <AppDiv className="App">
-      {windowSize.width > 800 ? (
+      {windowSize.width > 640 ? (
         <>
           <GlobalFonts />
           <DrumMachineBorder>
             <DrumMachineOuterContainer>
-              <DrumMachineLeftContainer>
+              <DrumMachineContainer>
                 <HeaderRow>
                   <PowerButton />
                   <Title />
                 </HeaderRow>
-                <DrumMachineLeftBottomContainer>
+                <DrumMachineBottomContainer>
                   <Controls />
                   <Pads />
-                </DrumMachineLeftBottomContainer>
-              </DrumMachineLeftContainer>
+                </DrumMachineBottomContainer>
+              </DrumMachineContainer>
               <Sequencer />
             </DrumMachineOuterContainer>
           </DrumMachineBorder>
@@ -116,12 +106,11 @@ function App() {
       ) : (
         <div>
           <ScreenSizeReminder>
-            Display width needs to be at least 800px. This app is designed for
+            Display width needs to be at least 640px. This app is designed for
             tablets and PCs, but not for phones and other small-screen devices.
           </ScreenSizeReminder>
         </div>
       )}
-      <Credits>MADE WITH LOVE BY <GitHubLink href="https://www.github.com/c-ehrlich/">CHRISTOPHER EHRLICH</GitHubLink></Credits>
     </AppDiv>
   );
 }
