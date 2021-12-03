@@ -46,7 +46,7 @@ let useStore = (set) => ({
   },
 
   // BPM of the sequencer
-  sequencerBPM: 110,
+  sequencerBPM: 92,
   setSequencerBPM: (sequencerBPM) =>
     set((state) => ({ ...state, sequencerBPM })),
 
