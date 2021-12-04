@@ -32,6 +32,7 @@ input[type=range]::-webkit-slider-thumb {
   background-image: linear-gradient(
     to right,
     /*
+     * CHROME SPECIFIC ISSUE
      * there is something weird about how linear-gradient works
      * with 35%/55% the middle light grey part looks centered
      * for some reason... at 40%/60% it looks shifted to the right
@@ -58,24 +59,29 @@ input[type=range]::-moz-range-track {
   border: 4px inset rgb(118, 118, 118);
   border-radius: 4px;
   width: 100%;
-  height: 20.8px;
+  /*
+   * MOZILLA SPECIFIC ISSUE
+   * -moz-range-thumb and -moz-range-track are calculated
+   * different than other browsers
+   */
+  height: 12.8px;
   cursor: pointer;
 }
 input[type=range]::-moz-range-thumb {
   margin-top: -12.9px;
-  width: 18px;
-  height: 43px;
+  /*
+   * MOZILLA SPECIFIC ISSUE
+   * -moz-range-thumb and -moz-range-track are calculated
+   * different than other browsers
+   */
+  width: 13px;
+  height: 38px;
   background-image: linear-gradient(
     to right,
-    /*
-     * there is something weird about how linear-gradient works
-     * with 35%/55% the middle light grey part looks centered
-     * for some reason... at 40%/60% it looks shifted to the right
-     */
-    rgba(0, 0, 0, 1) 35%,
-    rgba(159, 159, 159, 1) 35%,
-    rgba(159, 159, 159, 1) 55%,
-    rgba(0, 0, 0, 1) 55%
+    rgba(0, 0, 0, 1) 42%,
+    rgba(159, 159, 159, 1) 42%,
+    rgba(159, 159, 159, 1) 58%,
+    rgba(0, 0, 0, 1) 58%
   );
   border: 2.7px outset rgba(255, 255, 255, 0.5);
   box-shadow: 0 0 4px 2px black;
