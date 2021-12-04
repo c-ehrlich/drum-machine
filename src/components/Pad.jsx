@@ -69,7 +69,6 @@ const Pad = ({ triggerKey }) => {
         id={`drum-pad-${triggerKey}`}
         onClick={() => {
           if (fileName) {
-            console.log(fileName);
             setDisplay(bank.pads[triggerKey].name);
             playSound({ triggerKey: triggerKey, volume: volume });
           } else {
