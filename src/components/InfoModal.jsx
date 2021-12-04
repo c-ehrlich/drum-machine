@@ -68,13 +68,13 @@ const InfoModal = ({ closeModal }) => {
           <ul>
             <li>Info about the app</li>
             <li>Maybe some settings like turning on accessibility stuff</li>
-            <li>
-              TKTK Name: This setting deactivates TK KEYBOARD THING for all
-              buttons and other interactive elements in the app. This makes
-              makes the app look nicer, but it also breaks some accessibility
-              features. This menu will always have all accessibility features
-              enabled regardless of settings.
-            </li>
+            <li>Shortcuts</li>
+            <ul>
+              <li>Q-R, A-F, Z-V - play sounds</li>
+              <li>Z, U - decrease / increase volume</li>
+              <li>H, J - change sample bank</li>
+              <li>N, M - decrease / increase BPM</li>
+            </ul>
           </ul>
           <SettingsRow
             title="Focus Indicator"
