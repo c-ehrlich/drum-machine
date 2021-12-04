@@ -10,7 +10,7 @@ const StyledSettingsRow = styled.div`
 `;
 
 const SettingsRowTitle = styled.h3`
-  ${'' /* color: red; */}
+  ${"" /* color: red; */}
   margin: 0;
 `;
 
@@ -18,6 +18,12 @@ const SettingsRowDescription = styled.div`
   color: grey;
   grid-area: settings-row-description;
   margin: 0;
+`;
+
+const SettingsRowToggleInput = styled.input`
+  opacity: 0;
+  width: 0;
+  height: 0;
 `;
 
 const SettingsRowToggle = styled.label`
@@ -28,13 +34,14 @@ const SettingsRowToggle = styled.label`
 
   justify-self: end;
   align-self: center;
+
+  ${SettingsRowToggleInput}:focus & {
+    outline: 20px dotted #212121;
+    outline: 20px auto -webkit-focus-ring-color;
+  }
 `;
 
-const SettingsRowToggleInput = styled.input`
-  opacity: 0;
-  width: 0;
-  height: 0;
-`;
+
 
 const SettingsRowToggleSpan = styled.span`
   position: absolute;
@@ -85,7 +92,7 @@ const SettingsRow = ({ title, description, value, onClick }) => {
         <SettingsRowToggleInput
           type="checkbox"
           checked={value}
-          onClick={onClick}
+          onChange={onClick}
         />
         <SettingsRowToggleSpan className="slider round"></SettingsRowToggleSpan>
       </SettingsRowToggle>
