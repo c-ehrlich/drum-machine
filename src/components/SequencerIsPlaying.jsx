@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
-const PlayStopButton = styled.div`
+const PlayStopButton = styled.button`
   background-color: rgb(118, 118, 118);
   width: 54px;
   display: flex;
