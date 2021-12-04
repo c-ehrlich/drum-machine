@@ -78,7 +78,7 @@ const InfoModal = ({ closeModal }) => {
           </ul>
           <SettingsRow
             title="Focus Indicator"
-            description="Disabling this setting will disable the visual focus indicator on clickable elements. This improves aesthetics of the app, at the expense of accessibility. The button to open the menu and everything inside the menu will always retain accessibility features, regardless of this setting."
+            description="Disabling this setting will disable the visual focus indicator on clickable elements. This improves aesthetics of the app, at the expense of accessibility."
             value={showFocus}
             onClick={() => setShowFocus(!showFocus)}
           />

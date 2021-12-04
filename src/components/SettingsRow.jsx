@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import useStore from "../store";
 
 const StyledSettingsRow = styled.div`
   display: grid;
@@ -81,11 +82,17 @@ const SettingsRowToggleSpan = styled.span`
 `;
 
 const SettingsRow = ({ title, description, value, onClick }) => {
+  const showFocus = useStore((state) => state.showFocus);
+
   return (
     <StyledSettingsRow>
       <SettingsRowTitle>{title}</SettingsRowTitle>
       <SettingsRowDescription>{description}</SettingsRowDescription>
-      <SettingsRowToggle className="switch settings-row-toggle">
+      <SettingsRowToggle
+        className={`switch settings-row-toggle ${
+          !showFocus && "no-outline-on-focus-within"
+        }`}
+      >
         <SettingsRowToggleInput
           type="checkbox"
           checked={value}

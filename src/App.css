@@ -100,3 +100,6 @@ input[type=range]:focus {
 .no-outline-on-focus:focus {
   outline: 0 !important;
 }
+.no-outline-on-focus-within:focus-within {
+  outline: 0 !important;
+}
