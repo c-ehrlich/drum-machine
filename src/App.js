@@ -5,11 +5,10 @@ import Title from "./components/Title";
 import Pads from "./components/Pads";
 import Controls from "./components/Controls";
 import InfoModal from "./components/InfoModal";
+import InfoModalOpenButton from "./components/InfoModalOpenButton";
 import Sequencer from "./components/Sequencer";
 import PowerButton from "./components/PowerButton";
 import GlobalFonts from "./fonts/fonts";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
 
 const AppDiv = styled.div`
   min-height: 100vh;
@@ -22,21 +21,6 @@ const AppDiv = styled.div`
   background-image: url(${process.env.PUBLIC_URL + `/images/wood1.jpg`});
   background-size: cover;
   gap: 0px;
-`;
-
-const ModalButton = styled.button`
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  font-size: 32px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  border-radius: 100%;
-`;
-
-const ModalButtonIcon = styled(FontAwesomeIcon)`
-  filter: drop-shadow(0 0 3px red);
 `;
 
 const DrumMachineBorder = styled.div`
@@ -97,12 +81,9 @@ function App() {
   return (
     <AppDiv className="App">
       <GlobalFonts />
-      <ModalButton onClick={() => setModalOpen(true)}>
-        <ModalButtonIcon 
-          icon={faQuestionCircle}
-        />
-      </ModalButton>
-      {modalOpen && <InfoModal setModalOpen={setModalOpen} />}
+      <InfoModalOpenButton openModal={() => setModalOpen(true)} />
+      
+      {modalOpen && <InfoModal closeModal={() => setModalOpen(false)} />}
       <DrumMachineBorder>
         <DrumMachineOuterContainer>
           <DrumMachineContainer>
