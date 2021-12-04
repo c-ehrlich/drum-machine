@@ -1,12 +1,15 @@
 import "./App.css";
+import { useState } from "react";
 import styled from "styled-components";
 import Title from "./components/Title";
 import Pads from "./components/Pads";
 import Controls from "./components/Controls";
+import InfoModal from "./components/InfoModal";
 import Sequencer from "./components/Sequencer";
 import PowerButton from "./components/PowerButton";
 import GlobalFonts from "./fonts/fonts";
-import useWindowSize from "./hooks/useWindowSize";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
 
 const AppDiv = styled.div`
   min-height: 100vh;
@@ -19,6 +22,21 @@ const AppDiv = styled.div`
   background-image: url(${process.env.PUBLIC_URL + `/images/wood1.jpg`});
   background-size: cover;
   gap: 0px;
+`;
+
+const ModalButton = styled.button`
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 32px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: 100%;
+`;
+
+const ModalButtonIcon = styled(FontAwesomeIcon)`
+  filter: drop-shadow(0 0 3px red);
 `;
 
 const DrumMachineBorder = styled.div`
@@ -73,45 +91,33 @@ const HeaderRow = styled.div`
   justify-content: space-between;
 `;
 
-const ScreenSizeReminder = styled.h1`
-  margin: 32px;
-  color: white;
-  text-shadow: 2px 2px 2px black;
-  text-align: center;
-`;
-
 function App() {
-  const windowSize = useWindowSize();
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <AppDiv className="App">
-      {windowSize.width > 640 ? (
-        <>
-          <GlobalFonts />
-          <DrumMachineBorder>
-            <DrumMachineOuterContainer>
-              <DrumMachineContainer>
-                <HeaderRow>
-                  <PowerButton />
-                  <Title />
-                </HeaderRow>
-                <DrumMachineBottomContainer>
-                  <Controls />
-                  <Pads />
-                </DrumMachineBottomContainer>
-              </DrumMachineContainer>
-              <Sequencer />
-            </DrumMachineOuterContainer>
-          </DrumMachineBorder>
-        </>
-      ) : (
-        <div>
-          <ScreenSizeReminder>
-            Display width needs to be at least 640px. This app is designed for
-            tablets and PCs, but not for phones and other small-screen devices.
-          </ScreenSizeReminder>
-        </div>
-      )}
+      <GlobalFonts />
+      <ModalButton onClick={() => setModalOpen(true)}>
+        <ModalButtonIcon 
+          icon={faQuestionCircle}
+        />
+      </ModalButton>
+      {modalOpen && <InfoModal setModalOpen={setModalOpen} />}
+      <DrumMachineBorder>
+        <DrumMachineOuterContainer>
+          <DrumMachineContainer>
+            <HeaderRow>
+              <PowerButton />
+              <Title />
+            </HeaderRow>
+            <DrumMachineBottomContainer>
+              <Controls />
+              <Pads />
+            </DrumMachineBottomContainer>
+          </DrumMachineContainer>
+          <Sequencer />
+        </DrumMachineOuterContainer>
+      </DrumMachineBorder>
     </AppDiv>
   );
 }
