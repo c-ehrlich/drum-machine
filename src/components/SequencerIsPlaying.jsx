@@ -52,6 +52,7 @@ const PlayStopIcon = styled(FontAwesomeIcon)`
 
 const SequencerIsPlaying = () => {
   const sequencerIsPlaying = useStore((state) => state.sequencerIsPlaying);
+  const showFocus = useStore((state) => state.showFocus);
   const toggleSequencerIsPlaying = useStore(
     (state) => state.toggleSequencerIsPlaying
   );
@@ -70,12 +71,14 @@ const SequencerIsPlaying = () => {
     return () => {
       document.removeEventListener("keypress", handleKeyPress);
     };
-  }, [toggleSequencerIsPlaying])
+  }, [toggleSequencerIsPlaying]);
 
   return (
     <PlayStopButton
       onClick={handleClick}
-      className={sequencerIsPlaying ? "playing" : null}
+      className={`${sequencerIsPlaying && "playing"} ${
+        !showFocus && "no-outline-on-focus"
+      }`}
     >
       <PlayStopIcon
         icon={faPlay}
