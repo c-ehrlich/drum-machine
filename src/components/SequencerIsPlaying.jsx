@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useStore from "../store";
 import styled from "styled-components";
 
@@ -59,6 +59,18 @@ const SequencerIsPlaying = () => {
   const handleClick = () => {
     toggleSequencerIsPlaying();
   };
+
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key.toUpperCase() === "P") {
+        toggleSequencerIsPlaying();
+      }
+    };
+    document.addEventListener("keypress", handleKeyPress);
+    return () => {
+      document.removeEventListener("keypress", handleKeyPress);
+    };
+  }, [toggleSequencerIsPlaying])
 
   return (
     <PlayStopButton
