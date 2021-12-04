@@ -49,6 +49,7 @@ const PowerButton = () => {
   const power = useStore((state) => state.power);
   const togglePower = useStore((state) => state.togglePower);
   const setCurrentStep = useStore((state) => state.setCurrentStep);
+  const showFocus = useStore((state) => state.showFocus);
 
   const toggleOnSound = new Audio(
     process.env.PUBLIC_URL + "/sounds/buttons/switch-on.mp3"
@@ -68,7 +69,7 @@ const PowerButton = () => {
   };
 
   return (
-    <StyledPowerButton onClick={handleClick} className={power ? "on" : null}>
+    <StyledPowerButton onClick={handleClick} className={`${power && "on"} ${!showFocus && "no-outline-on-focus"}`}>
       <PowerIcon icon={faPowerOff} />
     </StyledPowerButton>
   );

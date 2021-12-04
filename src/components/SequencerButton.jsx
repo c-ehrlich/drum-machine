@@ -50,6 +50,7 @@ const SequencerButton = ({ button, step }) => {
   const toggleOn = useStore((state) => state.toggleSequencer);
   const currentStep = useStore((state) => state.currentStep);
   const volume = useStore((state) => state.volume);
+  const showFocus = useStore((state) => state.showFocus);
 
   useEffect(() => {
     if (isOn && currentStep === step) {
@@ -81,7 +82,7 @@ const SequencerButton = ({ button, step }) => {
   return (
     <StyledSequencerButton
       onClick={handleClick}
-      className={assignButtonClass()}
+      className={`${assignButtonClass()} ${!showFocus && "no-outline-on-focus"}`}
     >
     </StyledSequencerButton>
   );

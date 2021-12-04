@@ -65,7 +65,7 @@ const Pad = ({ triggerKey }) => {
     <PadContainer>
       <PadButton
         ref={padButtonRef}
-        className={`drum-pad ${showFocus ? "" : "no-outline-on-focus"}`}
+        className={!showFocus && "no-outline-on-focus"}
         id={`drum-pad-${triggerKey}`}
         onClick={() => {
           if (fileName) {

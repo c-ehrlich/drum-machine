@@ -49,7 +49,7 @@ const BankSelectorIcon = styled(FontAwesomeIcon)`
   font-size: 18px;
   color: rgb(80, 80, 80);
   filter: drop-shadow(0px -1px 0px black);
-  ${'' /* filter: ; */}
+  ${"" /* filter: ; */}
 `;
 
 const BankSelectorSelect = styled.select`
@@ -57,7 +57,7 @@ const BankSelectorSelect = styled.select`
   color: rgb(209, 209, 209);
   background-color: rgb(59, 59, 59);
   border: 3px inset rgb(118, 118, 118);
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   border-radius: 4px;
 `;
 
@@ -66,6 +66,7 @@ const BankSelector = () => {
   const setBank = useStore((state) => state.setBank);
   const power = useStore((state) => state.power);
   const setDisplay = useStore((state) => state.setDisplay);
+  const showFocus = useStore((state) => state.showFocus);
 
   useEffect(() => {
     setDisplay(bank.name);
@@ -99,10 +100,14 @@ const BankSelector = () => {
   return (
     <StyledBankSelector>
       <BankSelectorRow>
-        <BankSelectorButton onClick={prevBank}>
+        <BankSelectorButton
+          onClick={prevBank}
+          className={!showFocus && "no-outline-on-focus"}
+        >
           <BankSelectorIcon icon={faChevronLeft} />
         </BankSelectorButton>
         <BankSelectorSelect
+          className={!showFocus && "no-outline-on-focus"}
           onChange={(e) => handleChange(e)}
           value={bank.url}
           id="bank-select"
@@ -117,7 +122,10 @@ const BankSelector = () => {
             );
           })}
         </BankSelectorSelect>
-        <BankSelectorButton onClick={nextBank}>
+        <BankSelectorButton
+          onClick={nextBank}
+          className={!showFocus && "no-outline-on-focus"}
+        >
           <BankSelectorIcon icon={faChevronRight} />
         </BankSelectorButton>
       </BankSelectorRow>
