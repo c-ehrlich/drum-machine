@@ -93,6 +93,14 @@ input[type=range]::-moz-range-thumb {
 }
 
 /*
+ * Focus stuff
+ */
+input[type=range]:focus {
+  outline: 1px dotted #212121;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+/*
  * Using default sliders on Pre-Chromium Edge because people
  * who use that browser don't deserve nice things. 
  */
