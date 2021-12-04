@@ -10,7 +10,6 @@ const StyledSettingsRow = styled.div`
 `;
 
 const SettingsRowTitle = styled.h3`
-  ${"" /* color: red; */}
   margin: 0;
 `;
 
@@ -35,13 +34,11 @@ const SettingsRowToggle = styled.label`
   justify-self: end;
   align-self: center;
 
-  ${SettingsRowToggleInput}:focus & {
-    outline: 20px dotted #212121;
-    outline: 20px auto -webkit-focus-ring-color;
+  &:focus-within {
+    outline: 1px dotted #212121;
+    outline: 5px auto -webkit-focus-ring-color;
   }
 `;
-
-
 
 const SettingsRowToggleSpan = styled.span`
   position: absolute;
