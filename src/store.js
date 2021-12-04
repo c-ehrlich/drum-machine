@@ -27,6 +27,12 @@ let useStore = (set) => ({
   display: "Drum Machine",
   setDisplay: (display) => set((state) => ({ ...state, display })),
 
+  // Hide focus markers
+  // This breaks some accessbility features
+  // but makes the app look nicer
+  showFocus: true,
+  setShowFocus: (showFocus) => set((state) => ({ ...state, showFocus })),
+
   // drum machine / sequencer power
   power: true,
   togglePower: () =>

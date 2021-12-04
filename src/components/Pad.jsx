@@ -50,6 +50,7 @@ const Pad = ({ triggerKey }) => {
   const bank = useStore((state) => state.bank);
   const setDisplay = useStore((state) => state.setDisplay);
   const volume = useStore((state) => state.volume);
+  const showFocus = useStore((state) => state.showFocus);
   const padButtonRef = useRef();
   const padAudioRef = useRef();
 
@@ -64,7 +65,7 @@ const Pad = ({ triggerKey }) => {
     <PadContainer>
       <PadButton
         ref={padButtonRef}
-        className="drum-pad"
+        className={`drum-pad ${showFocus ? "" : "no-outline-on-focus"}`}
         id={`drum-pad-${triggerKey}`}
         onClick={() => {
           if (fileName) {

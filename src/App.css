@@ -2,8 +2,11 @@
 /*
  * remove blue outline after clicking button / select
  */
-button:focus {outline:0;}
-select:focus {outline:0;}
+/* .no-outline-on-focus button:focus {outline:0;}
+.no-outline-on-focus select:focus {outline:0;} */
+.no-outline-on-focus:focus {
+  outline: 0;
+}
 
 /*
  * RANGE SLIDERS
