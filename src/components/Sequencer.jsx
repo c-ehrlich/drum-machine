@@ -14,9 +14,11 @@ const SequencerOuter = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  ${'' /* TODO this 25px gap is a dumb hack
+  ${
+    "" /* TODO this 25px gap is a dumb hack
   to align things vertically. figure out
-  the correct way of doing it. */}
+  the correct way of doing it. */
+  }
   gap: 25px;
 `;
 
@@ -56,14 +58,23 @@ const SequencerButtonBlock = styled.div`
   justify-content: space-between;
 `;
 
+const DeleteRowButton = styled.button`
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  border: 0;
+`;
+
 const DeleteRowIcon = styled(FontAwesomeIcon)`
-  color: rgb(118,118,118);
+  color: rgb(118, 118, 118);
   font-size: 24px;
   cursor: pointer;
-  ${'' /* TODO figure out a good way to offset the icons
+  ${
+    "" /* TODO figure out a good way to offset the icons
   probably don't want to put them on a background/button
-  so maybe a good drop-shadow? */}
-  ${'' /* filter: drop-shadow(0px 2px 0px rgba(255, 255, 255, 0.125)); */}
+  so maybe a good drop-shadow? */
+  }
+  ${"" /* filter: drop-shadow(0px 2px 0px rgba(255, 255, 255, 0.125)); */}
 
   &:hover {
     color: rgb(215, 215, 215);
@@ -79,6 +90,7 @@ const Sequencer = () => {
   const sequencerIsPlaying = useStore((state) => state.sequencerIsPlaying);
   const turnOffSequencer = useStore((state) => state.turnOffSequencer);
   const power = useStore((state) => state.power);
+  const showFocus = useStore((state) => state.showFocus);
 
   // TODO extract this logic into its own component? and just unmount that component when
   // the sequences isn't playing?
@@ -124,10 +136,12 @@ const Sequencer = () => {
                     );
                   })}
                 </SequencerButtonBlock>
-                <DeleteRowIcon
-                  icon={faTrash}
+                <DeleteRowButton
                   onClick={() => clearSequencerRow(button)}
-                />
+                  className={`slider ${!showFocus && "no-outline-on-focus"}`}
+                >
+                  <DeleteRowIcon icon={faTrash} />
+                </DeleteRowButton>
               </SequencerRow>
               <LabelText key={`sequencer-${button}`}>
                 {bank.pads[button].name}
