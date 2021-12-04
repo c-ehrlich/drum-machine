@@ -1,13 +1,3 @@
-
-/*
- * remove blue outline after clicking button / select
- */
-/* .no-outline-on-focus button:focus {outline:0;}
-.no-outline-on-focus select:focus {outline:0;} */
-.no-outline-on-focus:focus {
-  outline: 0;
-}
-
 /*
  * RANGE SLIDERS
  */
@@ -92,19 +82,21 @@ input[type=range]::-moz-range-thumb {
   cursor: pointer;
 }
 
-/*
- * Focus stuff
- */
+/* Focus stuff */
 input[type=range]:focus {
   outline: 1px dotted #212121;
   outline: 5px auto -webkit-focus-ring-color;
 }
 
-/*
- * Using default sliders on Pre-Chromium Edge because people
- * who use that browser don't deserve nice things. 
- */
+/* Using default sliders on Pre-Chromium Edge because people
+ * who use that browser don't deserve nice things. */
 
 /*
  * END RANGE SLIDERS
  */
+
+ 
+ /* remove blue outline after clicking button / select */
+.no-outline-on-focus:focus {
+  outline: 0 !important;
+}

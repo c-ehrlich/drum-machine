@@ -14,6 +14,7 @@ const Volume = () => {
   const setVolume = useStore((state) => state.setVolume);
   const power = useStore((state) => state.power);
   const setDisplay = useStore((state) => state.setDisplay);
+  const showFocus = useStore((state) => state.showFocus);
 
   const handleVolumeChange = (e) => {
     const volume = e.target.value;
@@ -29,7 +30,7 @@ const Volume = () => {
         max="100"
         value={volume}
         onChange={handleVolumeChange}
-        className="slider"
+        className={`slider ${!showFocus && "no-outline-on-focus"}`}
         id="myRange"
         disabled={!power}
       />

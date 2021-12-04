@@ -18,6 +18,7 @@ const SequencerBPM = () => {
   const setDisplay = useStore((state) => state.setDisplay);
   const sequencerBPM = useStore((state) => state.sequencerBPM);
   const setSequencerBPM = useStore((state) => state.setSequencerBPM);
+  const showFocus = useStore((state) => state.showFocus);
 
   const handleBPMChange = useCallback((bpm) => {
     setSequencerBPM(bpm);
@@ -47,7 +48,7 @@ const SequencerBPM = () => {
         max={MAX_BPM}
         value={sequencerBPM}
         onChange={(e) => handleBPMChange(e.target.value)}
-        className="slider"
+        className={`slider ${!showFocus && "no-outline-on-focus"}`}
         id="myRange"
         disabled={!power}
       />
