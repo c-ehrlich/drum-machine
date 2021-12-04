@@ -67,20 +67,28 @@ const Pad = ({ triggerKey }) => {
         className="drum-pad"
         id={`drum-pad-${triggerKey}`}
         onClick={() => {
-          setDisplay(bank.pads[triggerKey].name);
-          playSound({ triggerKey: triggerKey, volume: volume });
+          if (fileName) {
+            console.log(fileName);
+            setDisplay(bank.pads[triggerKey].name);
+            playSound({ triggerKey: triggerKey, volume: volume });
+          } else {
+            console.log("file not yet loaded");
+          }
         }}
         disabled={!power}
       >
-        <audio
-          ref={padAudioRef}
-          className="clip"
-          id={`pad-${triggerKey}`}
-          src={fileName}
-          type="audio/mpeg"
-        >
-          Your browser does not support HTML5 audio
-        </audio>
+        {fileName ? (
+          <audio
+            preload="auto"
+            ref={padAudioRef}
+            className="clip"
+            id={`pad-${triggerKey}`}
+            src={fileName}
+            type="audio/mpeg"
+          >
+            Your browser does not support HTML5 audio
+          </audio>
+        ) : null}
       </PadButton>
       <PadLabel
         triggerKey={triggerKey}
