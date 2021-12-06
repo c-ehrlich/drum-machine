@@ -21,7 +21,7 @@ const SequencerOuter = styled.div`
   }
   gap: 25px;
 
-  @media(max-width: 650px) {
+  @media (max-width: 650px) {
     width: 100%;
   }
 `;
@@ -45,6 +45,7 @@ const SequencerRowsContainer = styled.div`
   gap: 8px;
 `;
 
+// the 16 pads
 const SequencerRow = styled.div`
   width: 100%;
   display: flex;
@@ -55,15 +56,33 @@ const SequencerRow = styled.div`
 
 const SequencerBlock = styled.div`
   width: 100%;
-  display: flex;
+  ${'' /* display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-start; */}
+  display: grid;
+  grid-template-columns: auto min-content;
+  grid-template-areas:
+    "pads   delete"
+    "label  .";
+  column-gap: 16px;
+  row-gap: 0;
 `;
 
 const SequencerButtonBlock = styled.div`
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
   justify-content: space-between;
+  column-gap: 8px;
+
+  @media (max-width: 550px) {
+    grid-template-columns: repeat(8, 1fr);
+    row-gap: 8px;
+  }
+
+  @media (max-width: 300px) {
+    column-gap: 4px;
+  }
 `;
 
 const DeleteRowButton = styled.button`
@@ -144,13 +163,14 @@ const Sequencer = () => {
                     );
                   })}
                 </SequencerButtonBlock>
-                <DeleteRowButton
+
+              </SequencerRow>
+              <DeleteRowButton
                   onClick={() => clearSequencerRow(button)}
                   className={`slider ${!showFocus && "no-outline-on-focus"}`}
                 >
                   <DeleteRowIcon icon={faTrash} />
                 </DeleteRowButton>
-              </SequencerRow>
               <LabelText key={`sequencer-${button}`}>
                 {bank.pads[button].name}
               </LabelText>

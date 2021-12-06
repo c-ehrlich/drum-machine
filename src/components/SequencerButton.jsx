@@ -5,7 +5,7 @@ import playSound from "../tools/playSound";
 
 const StyledSequencerButton = styled.button`
   height: 32px;
-  width: 24px;
+  width: 100%;
   background-color: rgb(118, 118, 118);
   border-radius: 4px;
   border-style: outset;
@@ -41,6 +41,10 @@ const StyledSequencerButton = styled.button`
   &.pass:hover {
     transition: 100ms;
     box-shadow: 0px 0px 12px 6px salmon;
+  }
+
+  @media (max-width: 550px) {
+    width: 100%;
   }
 `;
 
