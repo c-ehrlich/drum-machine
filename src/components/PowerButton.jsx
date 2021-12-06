@@ -70,7 +70,7 @@ const PowerButton = () => {
 
   useEffect(() => {
     const handleKeyPress = (e) => {
-      if (e.key === "Enter") {
+      if (e.key.toUpperCase() === "O") {
         handleTogglePower();
       }
     }
