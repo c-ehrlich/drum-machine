@@ -53,6 +53,7 @@ const PlayStopIcon = styled(FontAwesomeIcon)`
 const SequencerIsPlaying = () => {
   const sequencerIsPlaying = useStore((state) => state.sequencerIsPlaying);
   const showFocus = useStore((state) => state.showFocus);
+  const power = useStore((state) => state.power);
   const toggleSequencerIsPlaying = useStore(
     (state) => state.toggleSequencerIsPlaying
   );
@@ -63,7 +64,7 @@ const SequencerIsPlaying = () => {
 
   useEffect(() => {
     const handleKeyPress = (e) => {
-      if (e.key.toUpperCase() === "P") {
+      if (e.key.toUpperCase() === "P" && power) {
         toggleSequencerIsPlaying();
       }
     };
@@ -71,7 +72,7 @@ const SequencerIsPlaying = () => {
     return () => {
       document.removeEventListener("keypress", handleKeyPress);
     };
-  }, [toggleSequencerIsPlaying]);
+  }, [toggleSequencerIsPlaying, power]);
 
   return (
     <PlayStopButton

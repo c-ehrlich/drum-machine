@@ -59,6 +59,12 @@ const BankSelectorSelect = styled.select`
   border: 3px inset rgb(118, 118, 118);
   font-family: "Orbitron", sans-serif;
   border-radius: 4px;
+
+  &.off {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: transparent;
+  }
 `;
 
 const BankSelector = () => {
@@ -96,14 +102,14 @@ const BankSelector = () => {
   useEffect(() => {
     setDisplay(bank.name);
     const handleKeyPress = (e) => {
-      if (e.key.toUpperCase() === "H") prevBank();
-      if (e.key.toUpperCase() === "J") nextBank();
+      if (e.key.toUpperCase() === "H" && power) prevBank();
+      if (e.key.toUpperCase() === "J" && power) nextBank();
     };
     document.addEventListener("keypress", handleKeyPress);
     return () => {
       document.removeEventListener("keypress", handleKeyPress);
     };
-  }, [bank, setDisplay, nextBank, prevBank]);
+  }, [bank, setDisplay, nextBank, prevBank, power]);
 
   return (
     <StyledBankSelector>
@@ -115,7 +121,9 @@ const BankSelector = () => {
           <BankSelectorIcon icon={faChevronLeft} />
         </BankSelectorButton>
         <BankSelectorSelect
-          className={!showFocus && "no-outline-on-focus"}
+          className={`${!showFocus && "no-outline-on-focus"} ${
+            !power && "off"
+          }`}
           onChange={(e) => handleChange(e)}
           value={bank.url}
           id="bank-select"
