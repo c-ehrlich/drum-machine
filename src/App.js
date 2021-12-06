@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Title from "./components/Title";
 import Pads from "./components/Pads";
 import Controls from "./components/Controls";
+import HeaderRow from "./components/HeaderRow";
 import InfoModal from "./components/InfoModal";
 import InfoModalOpenButton from "./components/InfoModalOpenButton";
 import Sequencer from "./components/Sequencer";
@@ -81,14 +82,6 @@ const DrumMachineBottomContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 32px;
-  justify-content: space-between;
-`;
-
-const HeaderRow = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-between;
 `;
 
