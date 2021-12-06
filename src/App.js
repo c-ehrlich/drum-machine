@@ -77,24 +77,24 @@ const HeaderRow = styled.div`
 
 function App() {
   const [modalOpen, setModalOpen] = useState(false);
-  
+
   useEffect(() => {
     const handleKeyPress = (e) => {
       if (e.key.toUpperCase() === "I") {
         setModalOpen(!modalOpen);
       }
-    }
+    };
     document.addEventListener("keypress", handleKeyPress);
     return () => {
       document.removeEventListener("keypress", handleKeyPress);
-    }
-  })
+    };
+  });
 
   return (
     <AppDiv className="App">
       <GlobalFonts />
       <InfoModalOpenButton openModal={() => setModalOpen(true)} />
-      
+
       {modalOpen && <InfoModal closeModal={() => setModalOpen(false)} />}
       <DrumMachineBorder>
         <DrumMachineOuterContainer>
