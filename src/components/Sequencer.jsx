@@ -66,6 +66,10 @@ const SequencerBlock = styled.div`
     "label  .";
   column-gap: 16px;
   row-gap: 0;
+
+  @media (max-width: 374px) {
+    column-gap: 8px;
+  }
 `;
 
 const SequencerButtonBlock = styled.div`

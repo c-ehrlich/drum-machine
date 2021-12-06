@@ -6,6 +6,11 @@ const LabelText = styled.div`
   font-family: 'Orbitron', sans-serif;
   font-weight: 400;
   font-size: 10px;
+  word-wrap: break-all;
+
+  @media (max-width: 400px) {
+    font-size: 8px;
+  }
 `;
 
 export default LabelText;

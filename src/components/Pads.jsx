@@ -17,6 +17,10 @@ const PadsGrid = styled.div`
     grid-template-columns: repeat(4, 1fr);
     width: 100%;
   }
+
+  @media (max-width: 374px) {
+    gap: 8px;
+  }
 `;
 
 const Pads = () => {

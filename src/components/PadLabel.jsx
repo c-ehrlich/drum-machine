@@ -8,11 +8,17 @@ const StyledPadLabel = styled.div`
   justify-content: space-between;
 `;
 
+const LabelTextKey = styled(LabelText)`
+  @media (max-width: 319px) {
+    display: none;
+  }
+`;
+
 const PadLabel = ({ labelText, triggerKey }) => {
   return (
     <StyledPadLabel>
       <LabelText>{labelText}</LabelText>
-      <LabelText>{triggerKey}</LabelText>
+      <LabelTextKey>{triggerKey}</LabelTextKey>
     </StyledPadLabel>
   );
 };

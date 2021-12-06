@@ -48,7 +48,7 @@ const DrumMachineOuterContainer = styled.div`
     rgb(17, 17, 17) 100%
   );
   padding: 32px;
-  margin: 0 32px; /* what does this do? */
+  margin: 0 32px;
 
   display: flex;
   flex-direction: row;
@@ -63,6 +63,10 @@ const DrumMachineOuterContainer = styled.div`
     margin: 0;
     padding: 16px;
     box-sizing: border-box;
+  }
+
+  @media (max-width: 374px) {
+    padding: 8px;
   }
 `;
 
