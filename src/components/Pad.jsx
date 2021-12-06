@@ -84,7 +84,6 @@ const Pad = ({ triggerKey }) => {
             className="clip"
             id={`pad-${triggerKey}`}
             src={fileName}
-            type="audio/mpeg"
           >
             Your browser does not support HTML5 audio
           </audio>
