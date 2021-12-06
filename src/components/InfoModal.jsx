@@ -65,6 +65,7 @@ const InfoModal = ({ closeModal }) => {
         <ModalContent>
           <h1>FCC3000 Drum Machine</h1>
           <p>Some stuff will go here, like:</p>
+          <p>Please note: This app currently supports Chrome and other Chromium-based browsers, and Firefox, but not Safari.</p>
           <ul>
             <li>Info about the app</li>
             <li>Maybe some settings like turning on accessibility stuff</li>
