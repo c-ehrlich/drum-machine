@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import useStore from "../store";
 import soundBanks from "../sounds.json";
 import LabelText from "../styled";
@@ -68,15 +68,11 @@ const BankSelector = () => {
   const setDisplay = useStore((state) => state.setDisplay);
   const showFocus = useStore((state) => state.showFocus);
 
-  useEffect(() => {
-    setDisplay(bank.name);
-  }, [bank, setDisplay]);
-
   const handleChange = (e) => {
     setBank(e.target.value);
   };
 
-  const prevBank = () => {
+  const prevBank = useCallback(() => {
     // set the current active sound bank to the previous one
     const currentIndex = soundBanks.soundBanks.findIndex(
       (element) => element === bank
@@ -86,16 +82,28 @@ const BankSelector = () => {
     setBank(
       soundBanks.soundBanks[prevIndex % soundBanks.soundBanks.length].url
     );
-  };
+  }, [bank, setBank]);
 
-  const nextBank = () => {
+  const nextBank = useCallback(() => {
     // set the current active sound bank to the next one
     const nextIndex =
       soundBanks.soundBanks.findIndex((element) => element === bank) + 1;
     setBank(
       soundBanks.soundBanks[nextIndex % soundBanks.soundBanks.length].url
     );
-  };
+  }, [bank, setBank]);
+
+  useEffect(() => {
+    setDisplay(bank.name);
+    const handleKeyPress = (e) => {
+      if (e.key.toUpperCase() === "H") prevBank();
+      if (e.key.toUpperCase() === "J") nextBank();
+    };
+    document.addEventListener("keypress", handleKeyPress);
+    return () => {
+      document.removeEventListener("keypress", handleKeyPress);
+    };
+  }, [bank, setDisplay, nextBank, prevBank]);
 
   return (
     <StyledBankSelector>
