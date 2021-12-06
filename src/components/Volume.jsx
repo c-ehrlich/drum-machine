@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect, useCallback } from "react";
 import useStore from "../store";
 import styled from "styled-components";
 import LabelText from "../styled";
+
+const MIN_VOLUME = 0;
+const MAX_VOLUME = 100;
 
 const InfoElement = styled.div`
   display: flex;
@@ -16,20 +19,36 @@ const Volume = () => {
   const setDisplay = useStore((state) => state.setDisplay);
   const showFocus = useStore((state) => state.showFocus);
 
-  const handleVolumeChange = (e) => {
-    const volume = e.target.value;
-    setVolume(volume);
-    setDisplay(`Volume ${String(volume).padStart(3, '0')}%`);
-  };
+  const handleVolumeChange = useCallback((newVolumeInput) => {
+    const volumeErrorCheck = (newVolumeInput) => {
+      if (newVolumeInput < MIN_VOLUME) {return MIN_VOLUME}
+      else if (newVolumeInput > MAX_VOLUME) {return MAX_VOLUME}
+      else return newVolumeInput;
+    }
+    const newVolume = volumeErrorCheck(newVolumeInput);
+    setDisplay(`Volume ${String(newVolume).padStart(3, '0')}%`);
+    setVolume(newVolume);
+  }, [setVolume, setDisplay]);
+
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key.toUpperCase() === "Y") handleVolumeChange(volume - 1);
+      if (e.key.toUpperCase() === "U") handleVolumeChange(volume + 1);
+    }
+    document.addEventListener("keypress", handleKeyPress);
+    return () => {
+      document.removeEventListener("keypress", handleKeyPress);
+    }
+  })
 
   return (
     <InfoElement>
       <input
         type="range"
-        min="1"
-        max="100"
+        min={MIN_VOLUME}
+        max={MAX_VOLUME}
         value={volume}
-        onChange={handleVolumeChange}
+        onChange={(e) => handleVolumeChange(e.target.value)}
         className={`slider ${!showFocus && "no-outline-on-focus"}`}
         id="myRange"
         disabled={!power}
