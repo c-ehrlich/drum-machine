@@ -71,11 +71,13 @@ const InfoModal = ({ closeModal }) => {
             <li>Maybe some settings like turning on accessibility stuff</li>
             <li>Shortcuts</li>
             <ul>
+              <li>Enter - Turn power on / off</li>
               <li>Q-R, A-F, Z-V - play sounds</li>
               <li>Z, U - decrease / increase volume</li>
               <li>H, J - change sample bank</li>
               <li>N, M - decrease / increase BPM</li>
               <li>I - open / close info menu</li>
+              <li>P - start / stop sequencer</li>
             </ul>
           </ul>
           <SettingsRow

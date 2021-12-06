@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useStore from "../store";
 import styled from "styled-components";
 
@@ -58,8 +58,8 @@ const PowerButton = () => {
     process.env.PUBLIC_URL + "/sounds/buttons/switch-off.mp3"
   );
 
-  const handleClick = () => {
-    if (power === true) {
+  const handleTogglePower = () => {
+    if (power) {
       setCurrentStep(0);
       toggleOffSound.play();
     } else {
@@ -68,8 +68,20 @@ const PowerButton = () => {
     togglePower();
   };
 
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key === "Enter") {
+        handleTogglePower();
+      }
+    }
+    document.addEventListener("keydown", handleKeyPress);
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress);
+    }
+  })
+
   return (
-    <StyledPowerButton onClick={handleClick} className={`${power && "on"} ${!showFocus && "no-outline-on-focus"}`}>
+    <StyledPowerButton onClick={handleTogglePower} className={`${power && "on"} ${!showFocus && "no-outline-on-focus"}`}>
       <PowerIcon icon={faPowerOff} />
     </StyledPowerButton>
   );
