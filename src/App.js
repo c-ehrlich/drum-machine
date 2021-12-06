@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import Title from "./components/Title";
 import Pads from "./components/Pads";
@@ -77,6 +77,18 @@ const HeaderRow = styled.div`
 
 function App() {
   const [modalOpen, setModalOpen] = useState(false);
+  
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key.toUpperCase() === "I") {
+        setModalOpen(!modalOpen);
+      }
+    }
+    document.addEventListener("keypress", handleKeyPress);
+    return () => {
+      document.removeEventListener("keypress", handleKeyPress);
+    }
+  })
 
   return (
     <AppDiv className="App">

@@ -75,6 +75,7 @@ const InfoModal = ({ closeModal }) => {
               <li>Z, U - decrease / increase volume</li>
               <li>H, J - change sample bank</li>
               <li>N, M - decrease / increase BPM</li>
+              <li>I - open / close info menu</li>
             </ul>
           </ul>
           <SettingsRow
