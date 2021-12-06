@@ -31,7 +31,6 @@ const ModalContent = styled.div`
   padding: 0 16px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
 `;
 
 const CloseModalButton = styled.button`
@@ -64,12 +63,9 @@ const InfoModal = ({ closeModal }) => {
       <StyledInfoModal onClick={(e) => e.stopPropagation()}>
         <ModalContent>
           <h1>FCC3000 Drum Machine</h1>
-          <p>Some stuff will go here, like:</p>
-          <p>Please note: This app currently supports Chrome and other Chromium-based browsers, and Firefox, but not Safari.</p>
-          <ul>
-            <li>Info about the app</li>
-            <li>Maybe some settings like turning on accessibility stuff</li>
-            <li>Shortcuts</li>
+          <p>This app does not yet work properly in Safari due to HTML5 audio issues. But I'm working on it!</p>
+          <div>
+            <h3>Shortcuts</h3>
             <ul>
               <li>O - Turn power on / off</li>
               <li>Q-R, A-F, Z-V - play sounds</li>
@@ -79,10 +75,10 @@ const InfoModal = ({ closeModal }) => {
               <li>I - open / close info menu</li>
               <li>P - start / stop sequencer</li>
             </ul>
-          </ul>
+          </div>
           <SettingsRow
             title="Focus Indicator"
-            description="Disabling this setting will disable the visual focus indicator on clickable elements. This improves aesthetics of the app, at the expense of accessibility."
+            description="Disabling this setting will disable the visual focus indicator on clickable elements. This improves aesthetics of the app, at the expense of accessibility. Regardless of settings, the button to open this menu and all elements within this menu will always remain accessible."
             value={showFocus}
             onClick={() => setShowFocus(!showFocus)}
           />
