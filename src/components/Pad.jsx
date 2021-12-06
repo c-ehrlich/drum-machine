@@ -42,6 +42,12 @@ const PadButton = styled.button`
     box-shadow: 0px 0px 10px 5px salmon;
     transition: 0ms;
   }
+
+  @media (max-width: 650px) {
+    width: 100%;
+    height: 0px;
+    padding-top: 67%;
+  }
 `;
 
 const Pad = ({ triggerKey }) => {

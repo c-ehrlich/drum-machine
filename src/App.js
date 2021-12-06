@@ -27,8 +27,14 @@ const DrumMachineBorder = styled.div`
   margin: 16px;
   background-image: url(${process.env.PUBLIC_URL + `/images/wood2.jpg`});
   background-size: cover;
-  margin: 16px;
   box-shadow: 0px 0px 15px 3px black;
+
+  @media (max-width: 650px) {
+    width: 100%;
+    margin: 0;
+    background-image: none;
+    box-shadow: none;
+  }
 `;
 
 const DrumMachineOuterContainer = styled.div`
@@ -50,6 +56,13 @@ const DrumMachineOuterContainer = styled.div`
 
   @media (max-width: 1280px) {
     flex-direction: column;
+  }
+
+  @media (max-width: 650px) {
+    width: 100% !important;
+    margin: 0;
+    padding: 16px;
+    box-sizing: border-box;
   }
 `;
 

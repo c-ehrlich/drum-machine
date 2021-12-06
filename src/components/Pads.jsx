@@ -12,6 +12,11 @@ const PadsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 120px);
   gap: 16px;
+
+  @media (max-width: 650px) {
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+  }
 `;
 
 const Pads = () => {

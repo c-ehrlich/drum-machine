@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const SequencerOuter = styled.div`
-  width: 520px;
+  width: 528px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -20,12 +20,20 @@ const SequencerOuter = styled.div`
   the correct way of doing it. */
   }
   gap: 25px;
+
+  @media(max-width: 650px) {
+    width: 100%;
+  }
 `;
 
 const SequencerControls = styled.div`
   width: 100%;
   display: flex;
   gap: 32px;
+
+  @media (max-width: 650px) {
+    gap: 16px;
+  }
 `;
 
 const SequencerRowsContainer = styled.div`
