@@ -49,6 +49,7 @@ const StyledDisplay = styled.div`
   justify-content: center;
   font-family: "D7Mono";
   font-size: 32px;
+  user-select: none;
 
   ${"" /* text */}
   animation: ${TextFlickerAnimation} 3s ease-out infinite;
