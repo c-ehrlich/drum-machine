@@ -14,7 +14,6 @@ const StyledSequencerBPM = styled.div`
 `;
 
 const SequencerBPM = () => {
-  const power = useStore((state) => state.power);
   const setDisplay = useStore((state) => state.setDisplay);
   const sequencerBPM = useStore((state) => state.sequencerBPM);
   const setSequencerBPM = useStore((state) => state.setSequencerBPM);

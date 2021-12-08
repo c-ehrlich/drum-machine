@@ -15,7 +15,6 @@ const InfoElement = styled.div`
 const Volume = () => {
   const volume = useStore((state) => state.volume);
   const setVolume = useStore((state) => state.setVolume);
-  const power = useStore((state) => state.power);
   const setDisplay = useStore((state) => state.setDisplay);
   const showFocus = useStore((state) => state.showFocus);
 
