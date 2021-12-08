@@ -50,7 +50,6 @@ const SequencerBPM = () => {
         onChange={(e) => handleBPMChange(e.target.value)}
         className={`slider ${!showFocus && "no-outline-on-focus"}`}
         id="myRange"
-        disabled={!power}
       />
       <LabelText>Sequencer BPM</LabelText>
     </StyledSequencerBPM>

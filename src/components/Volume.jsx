@@ -51,7 +51,6 @@ const Volume = () => {
         onChange={(e) => handleVolumeChange(e.target.value)}
         className={`slider ${!showFocus && "no-outline-on-focus"}`}
         id="myRange"
-        disabled={!power}
       />
       <LabelText>
         Volume
