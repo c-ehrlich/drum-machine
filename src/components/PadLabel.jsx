@@ -11,7 +11,7 @@ const StyledPadLabel = styled.div`
 const LabelTextKey = styled(LabelText)`
   user-select: none;
 
-  @media (max-width: 319px) {
+  @media (max-width: 400px) {
     display: none;
   }
 `;
