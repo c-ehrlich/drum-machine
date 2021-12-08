@@ -30,7 +30,7 @@ let useStore = (set) => ({
   // Hide focus markers
   // This breaks some accessbility features
   // but makes the app look nicer
-  showFocus: true,
+  showFocus: false,
   setShowFocus: (showFocus) => set((state) => ({ ...state, showFocus })),
 
   // drum machine / sequencer power
