@@ -48,6 +48,12 @@ const PadButton = styled.button`
     height: 0px;
     padding-top: 67%;
   }
+
+  &:disabled {
+    box-shadow: none;
+    background-color: rgb(118, 118, 118);
+    cursor: default;
+  }
 `;
 
 const Pad = ({ triggerKey }) => {

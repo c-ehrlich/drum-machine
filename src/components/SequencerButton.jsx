@@ -43,6 +43,12 @@ const StyledSequencerButton = styled.button`
     box-shadow: 0px 0px 12px 6px salmon;
   }
 
+  &:disabled {
+    box-shadow: none;
+    background-color: rgb(118, 118, 118);
+    cursor: default;
+  }
+
   @media (max-width: 550px) {
     width: 100%;
   }
@@ -67,7 +73,6 @@ const SequencerButton = ({ button, step }) => {
   };
 
   const assignButtonClass = () => {
-    if (!power) return "power-off";
     if (currentStep === step) {
       if (isOn) {
         return "play";
@@ -85,6 +90,7 @@ const SequencerButton = ({ button, step }) => {
 
   return (
     <StyledSequencerButton
+      disabled = {!power}
       onClick={handleClick}
       className={`${assignButtonClass()} ${!showFocus && "no-outline-on-focus"}`}
     >

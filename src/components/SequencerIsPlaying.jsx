@@ -31,6 +31,12 @@ const PlayStopButton = styled.button`
   &.playing:hover {
     box-shadow: 0px 0px 12px 6px salmon;
   }
+
+  &:disabled {
+    box-shadow: none;
+    background-color: rgb(118, 118, 118);
+    cursor: default;
+  }
 `;
 
 const PlayStopIcon = styled(FontAwesomeIcon)`
@@ -47,6 +53,10 @@ const PlayStopIcon = styled(FontAwesomeIcon)`
   &.playing {
     color: indianred;
     filter: drop-shadow(0px -1px 0px firebrick);
+  }
+
+  &.disabled {
+    cursor: default;
   }
 `;
 
@@ -80,10 +90,11 @@ const SequencerIsPlaying = () => {
       className={`${sequencerIsPlaying && "playing"} ${
         !showFocus && "no-outline-on-focus"
       }`}
+      disabled={!power}
     >
       <PlayStopIcon
         icon={faPlay}
-        className={sequencerIsPlaying ? "playing" : null}
+        className={`${sequencerIsPlaying && "playing"} ${!power && "disabled"}`}
       />
     </PlayStopButton>
   );

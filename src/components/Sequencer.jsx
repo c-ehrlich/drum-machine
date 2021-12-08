@@ -56,9 +56,11 @@ const SequencerRow = styled.div`
 
 const SequencerBlock = styled.div`
   width: 100%;
-  ${'' /* display: flex;
+  ${
+    "" /* display: flex;
   flex-direction: column;
-  align-items: flex-start; */}
+  align-items: flex-start; */
+  }
   display: grid;
   grid-template-columns: auto min-content;
   grid-template-areas:
@@ -109,6 +111,11 @@ const DeleteRowIcon = styled(FontAwesomeIcon)`
 
   &:hover {
     color: rgb(215, 215, 215);
+  }
+
+  &.disabled {
+    color: rgb(118, 118, 118);
+    cursor: default;
   }
 `;
 
@@ -167,14 +174,17 @@ const Sequencer = () => {
                     );
                   })}
                 </SequencerButtonBlock>
-
               </SequencerRow>
               <DeleteRowButton
-                  onClick={() => clearSequencerRow(button)}
-                  className={`slider ${!showFocus && "no-outline-on-focus"}`}
-                >
-                  <DeleteRowIcon icon={faTrash} />
-                </DeleteRowButton>
+                disabled={!power}
+                onClick={() => clearSequencerRow(button)}
+                className={`slider ${!showFocus && "no-outline-on-focus"}`}
+              >
+                <DeleteRowIcon
+                  icon={faTrash}
+                  className={!power && "disabled"}
+                />
+              </DeleteRowButton>
               <LabelText key={`sequencer-${button}`}>
                 {bank.pads[button].name}
               </LabelText>

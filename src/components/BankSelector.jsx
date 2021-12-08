@@ -43,13 +43,18 @@ const BankSelectorButton = styled.button`
     background-color: rgba(215, 215, 215, 0.5);
     box-shadow: 0px 0px 10px 5px rgba(215, 215, 215, 0.5);
   }
+
+  &:disabled {
+    background-color: rgb(118, 118, 118);
+    box-shadow: none;
+    cursor: default;
+  }
 `;
 
 const BankSelectorIcon = styled(FontAwesomeIcon)`
   font-size: 18px;
   color: rgb(80, 80, 80);
   filter: drop-shadow(0px -1px 0px black);
-  ${"" /* filter: ; */}
 `;
 
 const BankSelectorSelect = styled.select`
@@ -117,6 +122,7 @@ const BankSelector = () => {
         <BankSelectorButton
           onClick={prevBank}
           className={!showFocus && "no-outline-on-focus"}
+          disabled={!power}
         >
           <BankSelectorIcon icon={faChevronLeft} />
         </BankSelectorButton>
@@ -141,6 +147,7 @@ const BankSelector = () => {
         <BankSelectorButton
           onClick={nextBank}
           className={!showFocus && "no-outline-on-focus"}
+          disabled={!power}
         >
           <BankSelectorIcon icon={faChevronRight} />
         </BankSelectorButton>
