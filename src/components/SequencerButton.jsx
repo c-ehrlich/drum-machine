@@ -18,29 +18,34 @@ const StyledSequencerButton = styled.button`
   &:hover {
     background-color: rgba(215, 215, 215, 0.5);
     box-shadow: 0px 0px 10px 5px rgba(215, 215, 215, 0.5);
+    z-index: 1;
   }
 
   &.play {
     background-color: red;
     box-shadow: 0px 0px 10px 5px red;
     transition: 200ms;
+    z-index: 4;
   }
 
   &.hit {
     background-color: rgb(215, 215, 215);
     box-shadow: 0px 0px 6px 3px rgb(215, 215, 215);
     transition: 0ms;
+    z-index: 2;
   }
 
   &.pass {
     background-color: salmon;
     box-shadow: 0px 0px 10px 5px salmon;
     transition: 500ms;
+    z-index: 3;
   }
 
   &.pass:hover {
     transition: 100ms;
     box-shadow: 0px 0px 12px 6px salmon;
+    z-index: 3;
   }
 
   &:disabled {

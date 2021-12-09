@@ -41,6 +41,7 @@ const PadButton = styled.button`
     background-color: salmon;
     box-shadow: 0px 0px 10px 5px salmon;
     transition: 0ms;
+    z-index: 1;
   }
 
   @media (max-width: 650px) {
