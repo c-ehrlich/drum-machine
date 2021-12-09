@@ -19,7 +19,7 @@ const PadsGrid = styled.div`
     width: 100%;
   }
 
-  @media (max-width: 374px) {
+  @media (max-width: 400px) {
     gap: 8px;
   }
 `;
