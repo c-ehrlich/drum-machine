@@ -63,7 +63,6 @@ const InfoModal = ({ closeModal }) => {
       <StyledInfoModal onClick={(e) => e.stopPropagation()}>
         <ModalContent>
           <h1>FCC3000 Drum Machine</h1>
-          <p>This app does not yet work properly in Safari due to HTML5 audio issues. But I'm working on it!</p>
           <div>
             <h3>Shortcuts</h3>
             <ul>
@@ -86,6 +85,7 @@ const InfoModal = ({ closeModal }) => {
             View the code for this project on{" "}
             <a href="https://github.com/c-ehrlich/drum-machine">Github</a>.
           </p>
+          <p>This app does not yet work properly in Safari because it implements html5 audio differently from all other browsers in some bizarre ways. A full rewrite using the WebAudio API is coming... at some point... maybe...</p>
         </ModalContent>
         <CloseModalButton onClick={() => closeModal()}>Close</CloseModalButton>
       </StyledInfoModal>
