@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-import Controls from "./components/Controls";
-import HeaderRow from "./components/HeaderRow";
-import Pads from "./components/Pads";
-import PowerButton from "./components/PowerButton";
-import Title from "./components/Title";
+import Controls from "./Controls";
+import HeaderRow from "./HeaderRow";
+import Pads from "./Pads";
+import PowerButton from "./PowerButton";
+import Title from "./Title";
 
 const StyledDrumMachine = styled.div`
   display: flex;
