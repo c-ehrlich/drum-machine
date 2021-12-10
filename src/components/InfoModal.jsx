@@ -13,7 +13,7 @@ const SemiTransparentBackground = styled.div`
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.75);
-  z-index: 1;
+  z-index: 9;
 `;
 
 const StyledInfoModal = styled.div`
