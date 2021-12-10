@@ -22,6 +22,14 @@ const AppDiv = styled.div`
   background-image: url(${process.env.PUBLIC_URL + `/images/wood1.jpg`});
   background-size: cover;
   gap: 0px;
+
+  &.modalOpen {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
 `;
 
 const DrumMachineBorder = styled.div`
@@ -101,7 +109,7 @@ function App() {
   });
 
   return (
-    <AppDiv className="App">
+    <AppDiv className={`App ${modalOpen && "modalOpen"}`}>
       <GlobalFonts />
       <InfoModalOpenButton openModal={() => setModalOpen(true)} />
 
